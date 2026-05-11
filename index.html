@@ -13,15 +13,10 @@
     --text: #e8eaf0;
     --muted: #7c82a0;
     --green: #22c55e;
-    --green-dim: #16a34a22;
     --red: #ef4444;
-    --red-dim: #dc262622;
     --yellow: #eab308;
-    --yellow-dim: #ca8a0422;
     --purple: #a78bfa;
-    --purple-dim: #7c3aed22;
     --blue: #60a5fa;
-    --blue-dim: #2563eb22;
     --orange: #fb923c;
     --tarde: #f59e0b;
     --noite: #818cf8;
@@ -30,117 +25,120 @@
   * { box-sizing: border-box; margin: 0; padding: 0; }
   body { background: var(--bg); color: var(--text); font-family: 'Segoe UI', system-ui, sans-serif; min-height: 100vh; }
 
-  /* HEADER */
-  header { background: linear-gradient(135deg, #1e2235 0%, #151825 100%); border-bottom: 1px solid var(--border); padding: 20px 24px; }
-  .header-inner { max-width: 1400px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 12px; }
-  .header-title { font-size: 1.4rem; font-weight: 700; color: var(--text); }
+  header { background: linear-gradient(135deg, #1a1e30 0%, #131620 100%); border-bottom: 1px solid var(--border); padding: 18px 24px; }
+  .header-inner { max-width: 1500px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 12px; }
+  .header-title { font-size: 1.3rem; font-weight: 700; }
   .header-title span { color: var(--purple); }
-  .header-sub { font-size: 0.8rem; color: var(--muted); margin-top: 3px; }
-
-  /* STATS BAR */
-  .stats-bar { max-width: 1400px; margin: 20px auto; padding: 0 24px; display: flex; gap: 12px; flex-wrap: wrap; }
-  .stat-card { background: var(--surface); border: 1px solid var(--border); border-radius: 10px; padding: 14px 20px; flex: 1; min-width: 140px; }
-  .stat-label { font-size: 0.72rem; color: var(--muted); text-transform: uppercase; letter-spacing: .05em; }
-  .stat-value { font-size: 1.6rem; font-weight: 700; margin-top: 4px; }
-  .stat-value.green { color: var(--green); }
-  .stat-value.purple { color: var(--purple); }
-  .stat-value.yellow { color: var(--yellow); }
-  .stat-value.blue { color: var(--blue); }
-
-  /* FILTERS */
-  .filters { max-width: 1400px; margin: 0 auto 20px; padding: 0 24px; display: flex; gap: 10px; flex-wrap: wrap; align-items: center; }
-  .filter-group { display: flex; gap: 6px; align-items: center; }
-  .filter-label { font-size: 0.75rem; color: var(--muted); text-transform: uppercase; letter-spacing: .05em; white-space: nowrap; }
-  .btn { background: var(--surface2); border: 1px solid var(--border); color: var(--muted); padding: 7px 14px; border-radius: 8px; cursor: pointer; font-size: 0.8rem; transition: all .2s; white-space: nowrap; }
-  .btn:hover { border-color: var(--purple); color: var(--text); }
-  .btn.active { background: var(--purple-dim); border-color: var(--purple); color: var(--purple); font-weight: 600; }
-  .btn.tarde.active { background: rgba(245,158,11,.15); border-color: var(--tarde); color: var(--tarde); }
-  .btn.noite.active { background: rgba(129,140,248,.15); border-color: var(--noite); color: var(--noite); }
-  .btn.manha.active { background: rgba(52,211,153,.15); border-color: var(--manha); color: var(--manha); }
-  .search-box { background: var(--surface2); border: 1px solid var(--border); color: var(--text); padding: 7px 14px; border-radius: 8px; font-size: 0.85rem; width: 200px; outline: none; }
+  .header-sub { font-size: 0.75rem; color: var(--muted); margin-top: 3px; }
+  .search-box { background: var(--surface2); border: 1px solid var(--border); color: var(--text); padding: 7px 14px; border-radius: 8px; font-size: 0.82rem; width: 210px; outline: none; }
   .search-box:focus { border-color: var(--purple); }
   .search-box::placeholder { color: var(--muted); }
 
+  /* YEAR TABS */
+  .year-nav { max-width: 1500px; margin: 18px auto 0; padding: 0 24px; display: flex; gap: 8px; align-items: center; flex-wrap: wrap; }
+  .ytab { background: var(--surface2); border: 1px solid var(--border); color: var(--muted); padding: 8px 22px; border-radius: 10px; cursor: pointer; font-size: 0.88rem; font-weight: 600; transition: all .15s; }
+  .ytab:hover { border-color: var(--purple); color: var(--text); }
+  .ytab.active-2025 { background: rgba(167,139,250,.15); border-color: var(--purple); color: var(--purple); }
+  .ytab.active-2026 { background: rgba(96,165,250,.15); border-color: var(--blue); color: var(--blue); }
+  .ytab .yt-sub { font-size: 0.65rem; display: block; opacity: .7; font-weight: 400; margin-top: 1px; }
+
+  /* FILTERS */
+  .filters { max-width: 1500px; margin: 12px auto 0; padding: 0 24px; display: flex; gap: 8px; flex-wrap: wrap; align-items: center; }
+  .filter-label { font-size: 0.7rem; color: var(--muted); text-transform: uppercase; letter-spacing: .05em; white-space: nowrap; }
+  .btn { background: var(--surface2); border: 1px solid var(--border); color: var(--muted); padding: 5px 12px; border-radius: 7px; cursor: pointer; font-size: 0.76rem; transition: all .12s; white-space: nowrap; }
+  .btn:hover { border-color: var(--purple); color: var(--text); }
+  .btn.active { background: rgba(167,139,250,.14); border-color: var(--purple); color: var(--purple); font-weight: 600; }
+  .btn.tarde.active { background: rgba(245,158,11,.12); border-color: var(--tarde); color: var(--tarde); }
+  .btn.noite.active { background: rgba(129,140,248,.12); border-color: var(--noite); color: var(--noite); }
+  .btn.manha.active { background: rgba(52,211,153,.12); border-color: var(--manha); color: var(--manha); }
+
+  /* STATS */
+  .stats-bar { max-width: 1500px; margin: 14px auto 0; padding: 0 24px; display: flex; gap: 10px; flex-wrap: wrap; }
+  .stat { background: var(--surface); border: 1px solid var(--border); border-radius: 10px; padding: 12px 18px; flex: 1; min-width: 120px; }
+  .stat-lbl { font-size: 0.67rem; color: var(--muted); text-transform: uppercase; letter-spacing: .05em; }
+  .stat-val { font-size: 1.5rem; font-weight: 700; margin-top: 3px; }
+
+  /* PROMO BANNER */
+  .promo-wrap { max-width: 1500px; margin: 16px auto 0; padding: 0 24px; }
+  .promo-title { font-size: 0.82rem; font-weight: 700; color: var(--muted); text-transform: uppercase; letter-spacing: .06em; margin-bottom: 8px; }
+  .promo-title span { color: var(--purple); }
+  .promo-card { background: linear-gradient(135deg, rgba(124,58,237,.18), rgba(167,139,250,.05)); border: 1px solid rgba(167,139,250,.4); border-radius: 12px; padding: 14px 18px; margin-bottom: 8px; display: flex; align-items: center; gap: 14px; flex-wrap: wrap; }
+  .pname { font-size: 1rem; font-weight: 700; color: var(--purple); }
+  .pinfo { font-size: 0.75rem; color: var(--muted); margin-top: 2px; }
+  .pmonths { font-size: 0.72rem; color: rgba(167,139,250,.8); margin-top: 5px; }
+  .ptag { margin-left: auto; background: rgba(167,139,250,.2); border: 1px solid rgba(167,139,250,.5); color: var(--purple); border-radius: 8px; padding: 5px 14px; font-size: 0.82rem; font-weight: 700; white-space: nowrap; }
+
   /* GRID */
-  .grid { max-width: 1400px; margin: 0 auto; padding: 0 24px 40px; display: grid; grid-template-columns: repeat(auto-fill, minmax(340px, 1fr)); gap: 16px; }
+  .grid-wrap { max-width: 1500px; margin: 0 auto; padding: 16px 24px 40px; }
+  .divider { display: flex; align-items: center; gap: 10px; margin-bottom: 12px; }
+  .div-text { font-size: 0.72rem; color: var(--muted); text-transform: uppercase; letter-spacing: .06em; white-space: nowrap; }
+  .div-line { flex: 1; height: 1px; background: var(--border); }
+  .count-pill { background: var(--surface2); border: 1px solid var(--border); border-radius: 20px; padding: 2px 10px; font-size: 0.7rem; color: var(--muted); }
+  .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(310px, 1fr)); gap: 12px; }
+  .empty { grid-column: 1/-1; text-align: center; padding: 60px; color: var(--muted); }
 
   /* CARD */
-  .card { background: var(--surface); border: 1px solid var(--border); border-radius: 14px; overflow: hidden; transition: transform .2s, box-shadow .2s; cursor: pointer; }
-  .card:hover { transform: translateY(-2px); box-shadow: 0 8px 30px rgba(0,0,0,.4); }
-  .card.promo { border-color: var(--purple); box-shadow: 0 0 0 1px var(--purple)44; }
-  .card.new-emp { border-color: var(--yellow); }
-  
-  .card-header { padding: 16px; display: flex; justify-content: space-between; align-items: flex-start; gap: 10px; }
-  .card-name { font-size: 0.95rem; font-weight: 700; color: var(--text); line-height: 1.3; }
-  .card-role { font-size: 0.72rem; color: var(--muted); margin-top: 3px; }
-  .badges { display: flex; gap: 5px; flex-wrap: wrap; justify-content: flex-end; }
-  .badge { font-size: 0.65rem; padding: 3px 8px; border-radius: 20px; font-weight: 700; white-space: nowrap; text-transform: uppercase; letter-spacing: .04em; }
-  .badge-sep { background: rgba(96,165,250,.15); color: var(--blue); border: 1px solid rgba(96,165,250,.3); }
-  .badge-conf { background: rgba(34,197,94,.15); color: var(--green); border: 1px solid rgba(34,197,94,.3); }
-  .badge-tarde { background: rgba(245,158,11,.15); color: var(--tarde); border: 1px solid rgba(245,158,11,.3); }
-  .badge-noite { background: rgba(129,140,248,.15); color: var(--noite); border: 1px solid rgba(129,140,248,.3); }
-  .badge-manha { background: rgba(52,211,153,.15); color: var(--manha); border: 1px solid rgba(52,211,153,.3); }
-  .badge-promo { background: rgba(167,139,250,.2); color: var(--purple); border: 1px solid rgba(167,139,250,.5); }
-  .badge-new { background: rgba(234,179,8,.15); color: var(--yellow); border: 1px solid rgba(234,179,8,.3); }
+  .card { background: var(--surface); border: 1px solid var(--border); border-radius: 13px; overflow: hidden; cursor: pointer; transition: transform .12s, box-shadow .12s; }
+  .card:hover { transform: translateY(-2px); box-shadow: 0 6px 20px rgba(0,0,0,.4); }
+  .card.promo { border-color: rgba(167,139,250,.55); }
+  .card.close { border-left: 3px solid var(--orange); }
+  .card.newbie { border-left: 3px solid var(--yellow); }
 
-  /* HITS BAR */
-  .hits-section { padding: 0 16px 12px; }
-  .hits-label { font-size: 0.7rem; color: var(--muted); margin-bottom: 6px; display: flex; justify-content: space-between; }
-  .hits-label span { color: var(--text); font-weight: 600; }
-  .progress-bar { background: var(--surface2); border-radius: 4px; height: 6px; overflow: hidden; }
-  .progress-fill { height: 100%; border-radius: 4px; transition: width .5s; }
-  .fill-green { background: linear-gradient(90deg, var(--green), #16a34a); }
-  .fill-yellow { background: linear-gradient(90deg, var(--yellow), #d97706); }
-  .fill-red { background: linear-gradient(90deg, #f87171, var(--red)); }
-  .fill-purple { background: linear-gradient(90deg, var(--purple), #7c3aed); }
+  .ch { padding: 13px 15px 8px; display: flex; justify-content: space-between; align-items: flex-start; gap: 8px; }
+  .cname { font-size: 0.9rem; font-weight: 700; line-height: 1.25; }
+  .crole { font-size: 0.68rem; color: var(--muted); margin-top: 2px; }
+  .badges { display: flex; gap: 4px; flex-wrap: wrap; justify-content: flex-end; }
+  .badge { font-size: 0.6rem; padding: 2px 7px; border-radius: 20px; font-weight: 700; text-transform: uppercase; letter-spacing: .04em; white-space: nowrap; }
+  .b-sep { background: rgba(96,165,250,.12); color: var(--blue); border: 1px solid rgba(96,165,250,.25); }
+  .b-conf { background: rgba(34,197,94,.12); color: var(--green); border: 1px solid rgba(34,197,94,.25); }
+  .b-tarde { background: rgba(245,158,11,.12); color: var(--tarde); border: 1px solid rgba(245,158,11,.25); }
+  .b-noite { background: rgba(129,140,248,.12); color: var(--noite); border: 1px solid rgba(129,140,248,.25); }
+  .b-manha { background: rgba(52,211,153,.12); color: var(--manha); border: 1px solid rgba(52,211,153,.25); }
+  .b-promo { background: rgba(167,139,250,.18); color: var(--purple); border: 1px solid rgba(167,139,250,.45); }
+  .b-close { background: rgba(251,146,60,.12); color: var(--orange); border: 1px solid rgba(251,146,60,.25); }
+  .b-new { background: rgba(234,179,8,.12); color: var(--yellow); border: 1px solid rgba(234,179,8,.25); }
 
-  /* MONTHS GRID */
-  .months-grid { padding: 0 16px 16px; }
-  .months-label { font-size: 0.7rem; color: var(--muted); margin-bottom: 8px; text-transform: uppercase; letter-spacing: .04em; }
-  .month-cells { display: grid; grid-template-columns: repeat(7, 1fr); gap: 4px; }
-  .month-cell { border-radius: 5px; padding: 4px 2px; text-align: center; font-size: 0.58rem; border: 1px solid transparent; }
-  .month-cell .m-label { color: var(--muted); font-size: 0.55rem; }
-  .month-cell .m-pct { font-weight: 700; font-size: 0.68rem; margin-top: 1px; }
-  .month-cell.hit { background: rgba(167,139,250,.2); border-color: rgba(167,139,250,.5); }
-  .month-cell.hit .m-pct { color: var(--purple); }
-  .month-cell.hit .m-label { color: rgba(167,139,250,.7); }
-  .month-cell.miss { background: var(--surface2); border-color: var(--border); }
-  .month-cell.miss .m-pct { color: var(--muted); }
-  .month-cell.no-data { background: transparent; border-color: transparent; opacity: 0.3; }
-  .month-cell.no-data .m-pct { color: var(--muted); }
+  /* MONTH CELLS */
+  .cms { padding: 2px 15px 13px; }
+  .cms-head { font-size: 0.64rem; color: var(--muted); display: flex; justify-content: space-between; margin-bottom: 5px; }
+  .cms-head .chits { font-weight: 700; }
+  .chits.promo { color: var(--purple); }
+  .chits.close { color: var(--orange); }
+  .chits.ok { color: var(--blue); }
+  .chits.low { color: var(--muted); }
+  .mcells { display: grid; gap: 3px; }
+  .mc { border-radius: 5px; padding: 5px 2px; text-align: center; border: 1px solid transparent; }
+  .mc .ml { font-size: 0.5rem; }
+  .mc .mv { font-size: 0.62rem; font-weight: 700; margin-top: 2px; }
+  .mc.hit { background: rgba(167,139,250,.18); border-color: rgba(167,139,250,.45); }
+  .mc.hit .ml { color: rgba(167,139,250,.65); }
+  .mc.hit .mv { color: var(--purple); }
+  .mc.miss { background: var(--surface2); border-color: var(--border); }
+  .mc.miss .ml { color: var(--muted); opacity: .6; }
+  .mc.miss .mv { color: var(--muted); }
+  .mc.nd { background: transparent; opacity: .2; border-color: transparent; }
+  .mc.nd .mv { color: var(--muted); }
+
+  /* PROG BAR */
+  .prog { padding: 0 15px 13px; }
+  .prog-bar { background: var(--surface2); border-radius: 4px; height: 5px; overflow: hidden; position: relative; }
+  .prog-fill { height: 100%; border-radius: 4px; transition: width .4s; }
+  .prog-target { position: absolute; top: -2px; height: 9px; width: 2px; background: rgba(167,139,250,.7); border-radius: 1px; }
+  .prog-labels { display: flex; justify-content: space-between; font-size: 0.62rem; color: var(--muted); margin-top: 4px; }
 
   /* EXPAND */
-  .card-expanded { padding: 12px 16px 16px; border-top: 1px solid var(--border); display: none; }
-  .card-expanded.open { display: block; }
-  .detail-row { display: flex; justify-content: space-between; font-size: 0.78rem; padding: 4px 0; border-bottom: 1px solid var(--border)44; }
-  .detail-row:last-child { border-bottom: none; }
-  .detail-key { color: var(--muted); }
-  .detail-val { color: var(--text); font-weight: 500; text-align: right; }
+  .cexp { padding: 10px 15px 13px; border-top: 1px solid var(--border); display: none; }
+  .cexp.open { display: block; }
+  .er { display: flex; justify-content: space-between; font-size: 0.74rem; padding: 3px 0; border-bottom: 1px solid rgba(46,51,73,.4); }
+  .er:last-child { border: none; }
+  .ek { color: var(--muted); }
+  .ev { color: var(--text); font-weight: 500; text-align: right; }
 
-  /* PROMO SECTION */
-  .promo-section { max-width: 1400px; margin: 0 auto 24px; padding: 0 24px; }
-  .promo-title { font-size: 1rem; font-weight: 700; color: var(--purple); margin-bottom: 12px; display: flex; align-items: center; gap: 8px; }
-  .promo-title::before { content: '⭐'; }
-  .promo-cards { display: flex; gap: 12px; flex-wrap: wrap; }
-  .promo-card { background: linear-gradient(135deg, rgba(124,58,237,.2), rgba(167,139,250,.08)); border: 1px solid rgba(167,139,250,.4); border-radius: 12px; padding: 16px 20px; min-width: 220px; flex: 1; }
-  .promo-name { font-size: 1rem; font-weight: 700; color: var(--purple); }
-  .promo-detail { font-size: 0.78rem; color: var(--muted); margin-top: 4px; }
-  .promo-months { font-size: 0.85rem; color: var(--text); font-weight: 600; margin-top: 8px; }
+  /* HIDDEN */
+  .hidden { display: none !important; }
 
-  /* SECTION DIVIDER */
-  .section-divider { max-width: 1400px; margin: 4px auto 16px; padding: 0 24px; display: flex; align-items: center; gap: 12px; }
-  .divider-label { font-size: 0.78rem; color: var(--muted); text-transform: uppercase; letter-spacing: .06em; white-space: nowrap; }
-  .divider-line { flex: 1; height: 1px; background: var(--border); }
-  .count-badge { background: var(--surface2); border: 1px solid var(--border); border-radius: 20px; padding: 2px 10px; font-size: 0.72rem; color: var(--muted); }
-
-  /* EMPTY */
-  .empty { grid-column: 1/-1; text-align: center; padding: 60px 20px; color: var(--muted); font-size: 0.9rem; }
-
-  @media (max-width: 600px) {
-    .grid { padding: 0 12px 40px; }
-    .filters { padding: 0 12px; }
-    .stats-bar { padding: 0 12px; }
-    .month-cells { grid-template-columns: repeat(7, 1fr); }
+  @media (max-width:600px) {
+    .grid-wrap,.filters,.stats-bar,.promo-wrap,.year-nav { padding-left:12px; padding-right:12px; }
   }
 </style>
 </head>
@@ -150,179 +148,222 @@
   <div class="header-inner">
     <div>
       <div class="header-title">📦 Desempenho de <span>Colaboradores</span></div>
-      <div class="header-sub">Separadores &amp; Conferentes · Abr/2025 – Mai/2026 · Célula roxa = Meta batida</div>
+      <div class="header-sub">Separadores &amp; Conferentes · Meta: ≥ 8 meses no ano = candidato à promoção de cargo</div>
     </div>
     <input class="search-box" type="text" id="searchInput" placeholder="🔍 Buscar colaborador...">
   </div>
 </header>
 
-<div class="stats-bar" id="statsBar"></div>
+<div class="year-nav">
+  <button class="ytab active-2025" onclick="setYear(2025,this)">📅 2025 <span class="yt-sub">Abr – Dez (9 meses)</span></button>
+  <button class="ytab" onclick="setYear(2026,this)">📅 2026 <span class="yt-sub">Jan – Mai (5 meses, em andamento)</span></button>
+</div>
 
 <div class="filters">
-  <div class="filter-group">
-    <span class="filter-label">Turno:</span>
-    <button class="btn active" data-filter="shift" data-val="all" onclick="setFilter('shift','all',this)">Todos</button>
-    <button class="btn tarde" data-filter="shift" data-val="Tarde" onclick="setFilter('shift','Tarde',this)">🌅 Tarde</button>
-    <button class="btn noite" data-filter="shift" data-val="Noite" onclick="setFilter('shift','Noite',this)">🌙 Noite</button>
-    <button class="btn manha" data-filter="shift" data-val="Manhã" onclick="setFilter('shift','Manhã',this)">☀️ Manhã</button>
-  </div>
-  <div class="filter-group">
-    <span class="filter-label">Função:</span>
-    <button class="btn active" data-filter="role" data-val="all" onclick="setFilter('role','all',this)">Todos</button>
-    <button class="btn" data-filter="role" data-val="Separador" onclick="setFilter('role','Separador',this)">Separador</button>
-    <button class="btn" data-filter="role" data-val="Conferente" onclick="setFilter('role','Conferente',this)">Conferente</button>
-  </div>
-  <div class="filter-group">
-    <span class="filter-label">Status:</span>
-    <button class="btn active" data-filter="status" data-val="all" onclick="setFilter('status','all',this)">Todos</button>
-    <button class="btn" data-filter="status" data-val="promo" onclick="setFilter('status','promo',this)">⭐ Candidatos promoção</button>
-    <button class="btn" data-filter="status" data-val="new" onclick="setFilter('status','new',this)">🆕 Novos</button>
-  </div>
+  <span class="filter-label">Turno:</span>
+  <button class="btn active" data-f="shift" data-v="all" onclick="setFilter('shift','all',this)">Todos</button>
+  <button class="btn tarde" data-f="shift" data-v="Tarde" onclick="setFilter('shift','Tarde',this)">🌅 Tarde</button>
+  <button class="btn noite" data-f="shift" data-v="Noite" onclick="setFilter('shift','Noite',this)">🌙 Noite</button>
+  <button class="btn manha" data-f="shift" data-v="Manhã" onclick="setFilter('shift','Manhã',this)">☀️ Manhã</button>
+  <span class="filter-label" style="margin-left:8px">Função:</span>
+  <button class="btn active" data-f="role" data-v="all" onclick="setFilter('role','all',this)">Todos</button>
+  <button class="btn" data-f="role" data-v="Separador" onclick="setFilter('role','Separador',this)">Separador</button>
+  <button class="btn" data-f="role" data-v="Conferente" onclick="setFilter('role','Conferente',this)">Conferente</button>
+  <span class="filter-label" style="margin-left:8px">Ver:</span>
+  <button class="btn active" data-f="status" data-v="all" onclick="setFilter('status','all',this)">Todos</button>
+  <button class="btn" data-f="status" data-v="promo" onclick="setFilter('status','promo',this)">⭐ Promovíveis</button>
+  <button class="btn" data-f="status" data-v="close" onclick="setFilter('status','close',this)">🔥 Quase lá</button>
+  <button class="btn" data-f="status" data-v="new" onclick="setFilter('status','new',this)">🆕 Novos</button>
 </div>
 
-<div class="promo-section" id="promoSection"></div>
+<div class="stats-bar" id="statsBar"></div>
+<div class="promo-wrap" id="promoWrap"></div>
 
-<div class="section-divider">
-  <span class="divider-label">Todos os colaboradores</span>
-  <span class="count-badge" id="countBadge">0</span>
-  <div class="divider-line"></div>
+<div class="grid-wrap">
+  <div class="divider">
+    <span class="div-text" id="divText">Colaboradores</span>
+    <span class="count-pill" id="countBadge">0</span>
+    <div class="div-line"></div>
+  </div>
+  <div class="grid" id="cardsGrid"></div>
 </div>
-
-<div class="grid" id="cardsGrid"></div>
 
 <script>
 const MONTHS = ["Abr/25", "Mai/25", "Jun/25", "Jul/25", "Ago/25", "Set/25", "Out/25", "Nov/25", "Dez/25", "Jan/26", "Fev/26", "Mar/26", "Abr/26", "Mai/26"];
-const META_CONF = {"Abr/25": 9020.0, "Mai/25": 8873, "Jun/25": 9050.0, "Jul/25": 9000.0, "Ago/25": 8900.0, "Set/25": 9000.0, "Out/25": 9100.0, "Nov/25": 10100.0, "Dez/25": 10100.0, "Jan/26": 10100.0, "Fev/26": 9500.0, "Mar/26": 9100.0, "Abr/26": 9100.0, "Mai/26": 9700.0};
-const META_SEP = {"Abr/25": 8550.0, "Mai/25": 8394, "Jun/25": 8500.0, "Jul/25": 8450.0, "Ago/25": 8400.0, "Set/25": 8450.0, "Out/25": 8500.0, "Nov/25": 9100.0, "Dez/25": 9100.0, "Jan/26": 8500.0, "Fev/26": 8500.0, "Mar/26": 8500.0, "Abr/26": 8500.0, "Mai/26": 8900.0};
 const EMPLOYEES = [{"nome": "BEATRIZ S", "cargo": "AUX. DE LOGÍSTICA", "funcao": "Separador(a)", "role": "Separador", "shift": "Tarde", "horario": "11:40 às 21:40 hs", "monthly": {"Abr/25": {"num": 8208, "pct": 96, "hit": false}, "Mai/25": {"num": 117, "pct": 1, "hit": false}, "Jun/25": {"num": 8195, "pct": 96, "hit": false}, "Jul/25": {"num": 8938, "pct": 106, "hit": true}, "Ago/25": {"num": 8148, "pct": 96, "hit": false}, "Set/25": {"num": 9851, "pct": 117, "hit": true}, "Out/25": {"num": 9526, "pct": 112, "hit": true}, "Nov/25": {"num": 9128, "pct": 107, "hit": true}, "Dez/25": {"num": 7900, "pct": 93, "hit": false}, "Jan/26": {"num": 9899, "pct": 116, "hit": true}, "Fev/26": {"num": 9508, "pct": 112, "hit": true}, "Mar/26": {"num": 11194, "pct": 132, "hit": true}, "Abr/26": {"num": 11776, "pct": 139, "hit": true}, "Mai/26": {"num": 0, "pct": 0, "hit": false}}, "hits_count": 8, "first_month": "Abr/25", "is_new": false, "promotion_candidate": true}, {"nome": "BRUNO ROSA", "cargo": "AUX. DE LOGÍSTICA", "funcao": "Separador(a)", "role": "Separador", "shift": "Noite", "horario": "22:00 às 06:48 hs", "monthly": {"Abr/25": {"num": null, "pct": null, "hit": false}, "Mai/25": {"num": 2877, "pct": 34, "hit": false}, "Jun/25": {"num": 4683, "pct": 55, "hit": false}, "Jul/25": {"num": 5338, "pct": 63, "hit": false}, "Ago/25": {"num": 4063, "pct": 48, "hit": false}, "Set/25": {"num": 0, "pct": 0, "hit": false}, "Out/25": {"num": null, "pct": null, "hit": false}, "Nov/25": {"num": null, "pct": null, "hit": false}, "Dez/25": {"num": null, "pct": null, "hit": false}, "Jan/26": {"num": null, "pct": null, "hit": false}, "Fev/26": {"num": null, "pct": null, "hit": false}, "Mar/26": {"num": null, "pct": null, "hit": false}, "Abr/26": {"num": null, "pct": null, "hit": false}, "Mai/26": {"num": null, "pct": null, "hit": false}}, "hits_count": 0, "first_month": "Mai/25", "is_new": false, "promotion_candidate": false}, {"nome": "DEVANIR BARBOSA DE SOUZA", "cargo": "AUX. DE LOGÍSTICA", "funcao": "Separador(a)", "role": "Separador", "shift": "Tarde", "horario": "11:40 às 21:40 hs", "monthly": {"Abr/25": {"num": 8040, "pct": 94, "hit": false}, "Mai/25": {"num": 4036, "pct": 48, "hit": false}, "Jun/25": {"num": 0, "pct": 0, "hit": false}, "Jul/25": {"num": 380, "pct": 4, "hit": false}, "Ago/25": {"num": 0, "pct": 0, "hit": false}, "Set/25": {"num": 154, "pct": 2, "hit": false}, "Out/25": {"num": null, "pct": null, "hit": false}, "Nov/25": {"num": null, "pct": null, "hit": false}, "Dez/25": {"num": null, "pct": null, "hit": false}, "Jan/26": {"num": null, "pct": null, "hit": false}, "Fev/26": {"num": null, "pct": null, "hit": false}, "Mar/26": {"num": null, "pct": null, "hit": false}, "Abr/26": {"num": null, "pct": null, "hit": false}, "Mai/26": {"num": null, "pct": null, "hit": false}}, "hits_count": 0, "first_month": "Abr/25", "is_new": false, "promotion_candidate": false}, {"nome": "ALLAN SOARES", "cargo": "AUX. DE LOGÍSTICA", "funcao": "Separador(a)", "role": "Separador", "shift": "Tarde", "horario": "11:40 às 21:40 hs", "monthly": {"Abr/25": {"num": null, "pct": null, "hit": false}, "Mai/25": {"num": null, "pct": null, "hit": false}, "Jun/25": {"num": null, "pct": null, "hit": false}, "Jul/25": {"num": null, "pct": null, "hit": false}, "Ago/25": {"num": null, "pct": null, "hit": false}, "Set/25": {"num": null, "pct": null, "hit": false}, "Out/25": {"num": null, "pct": null, "hit": false}, "Nov/25": {"num": null, "pct": null, "hit": false}, "Dez/25": {"num": null, "pct": null, "hit": false}, "Jan/26": {"num": null, "pct": null, "hit": false}, "Fev/26": {"num": null, "pct": null, "hit": false}, "Mar/26": {"num": 8007, "pct": 94, "hit": false}, "Abr/26": {"num": 6088, "pct": 72, "hit": false}, "Mai/26": {"num": 2348, "pct": 26, "hit": false}}, "hits_count": 0, "first_month": "Mar/26", "is_new": true, "promotion_candidate": false}, {"nome": "FABIANE", "cargo": "AUX. DE LOGÍSTICA", "funcao": "Separador(a)", "role": "Separador", "shift": "Tarde", "horario": "11:40 às 21:40 hs", "monthly": {"Abr/25": {"num": 6379, "pct": 75, "hit": false}, "Mai/25": {"num": 7621, "pct": 91, "hit": false}, "Jun/25": {"num": 7294, "pct": 86, "hit": false}, "Jul/25": {"num": 7726, "pct": 91, "hit": false}, "Ago/25": {"num": 6380, "pct": 76, "hit": false}, "Set/25": {"num": 7442, "pct": 88, "hit": false}, "Out/25": {"num": 7160, "pct": 84, "hit": false}, "Nov/25": {"num": 6301, "pct": 74, "hit": false}, "Dez/25": {"num": 7175, "pct": 84, "hit": false}, "Jan/26": {"num": 6986, "pct": 82, "hit": false}, "Fev/26": {"num": 7311, "pct": 86, "hit": false}, "Mar/26": {"num": 0, "pct": 0, "hit": false}, "Abr/26": {"num": 7363, "pct": 87, "hit": false}, "Mai/26": {"num": 1680, "pct": 19, "hit": false}}, "hits_count": 0, "first_month": "Abr/25", "is_new": false, "promotion_candidate": false}, {"nome": "GUSTAVO GOMES ARAUJO", "cargo": "AUX. DE LOGÍSTICA", "funcao": "Separador(a)", "role": "Separador", "shift": "Tarde", "horario": "11:40 às 21:40 hs", "monthly": {"Abr/25": {"num": 235, "pct": 3, "hit": false}, "Mai/25": {"num": 548, "pct": 7, "hit": false}, "Jun/25": {"num": 547, "pct": 6, "hit": false}, "Jul/25": {"num": 268, "pct": 3, "hit": false}, "Ago/25": {"num": 186, "pct": 2, "hit": false}, "Set/25": {"num": 99, "pct": 1, "hit": false}, "Out/25": {"num": 1872, "pct": 22, "hit": false}, "Nov/25": {"num": 5652, "pct": 66, "hit": false}, "Dez/25": {"num": 3383, "pct": 40, "hit": false}, "Jan/26": {"num": 1935, "pct": 23, "hit": false}, "Fev/26": {"num": 682, "pct": 8, "hit": false}, "Mar/26": {"num": 193, "pct": 2, "hit": false}, "Abr/26": {"num": 94, "pct": 1, "hit": false}, "Mai/26": {"num": 165, "pct": 2, "hit": false}}, "hits_count": 0, "first_month": "Abr/25", "is_new": false, "promotion_candidate": false}, {"nome": "JESSICA DE SOUZA RIBEIRO", "cargo": "CONFERENTE DE EXPEDICAO JUNIOR", "funcao": "Conferente", "role": "Conferente", "shift": "Tarde", "horario": "11:40 às 21:40 hs", "monthly": {"Abr/25": {"num": 8729, "pct": 97, "hit": false}, "Mai/25": {"num": 7816, "pct": 88, "hit": false}, "Jun/25": {"num": 7572, "pct": 89, "hit": false}, "Jul/25": {"num": 2729, "pct": 30, "hit": false}, "Ago/25": {"num": 7384, "pct": 87, "hit": false}, "Set/25": {"num": 8397, "pct": 99, "hit": false}, "Out/25": {"num": 8337, "pct": 92, "hit": false}, "Nov/25": {"num": 8564, "pct": 94, "hit": false}, "Dez/25": {"num": 8388, "pct": 92, "hit": false}, "Jan/26": {"num": 10337, "pct": 102, "hit": true}, "Fev/26": {"num": 6192, "pct": 65, "hit": false}, "Mar/26": {"num": 8463, "pct": 93, "hit": false}, "Abr/26": {"num": 10373, "pct": 114, "hit": true}, "Mai/26": {"num": 2700, "pct": 28, "hit": false}}, "hits_count": 2, "first_month": "Abr/25", "is_new": false, "promotion_candidate": false}, {"nome": "LAERTE ANTONIO", "cargo": "CONFERENTE DE EXPEDICAO JUNIOR", "funcao": "Conferente", "role": "Conferente", "shift": "Tarde", "horario": "11:40 às 21:40 hs", "monthly": {"Abr/25": {"num": 10060, "pct": 112, "hit": true}, "Mai/25": {"num": 10689, "pct": 120, "hit": true}, "Jun/25": {"num": 10125, "pct": 119, "hit": true}, "Jul/25": {"num": 5865, "pct": 65, "hit": false}, "Ago/25": {"num": 10080, "pct": 119, "hit": true}, "Set/25": {"num": 9718, "pct": 115, "hit": true}, "Out/25": {"num": 11347, "pct": 125, "hit": true}, "Nov/25": {"num": 7749, "pct": 85, "hit": false}, "Dez/25": {"num": 2999, "pct": 33, "hit": false}, "Jan/26": {"num": 8166, "pct": 81, "hit": false}, "Fev/26": {"num": 7019, "pct": 74, "hit": false}, "Mar/26": {"num": null, "pct": 0, "hit": false}, "Abr/26": {"num": null, "pct": 0, "hit": false}, "Mai/26": {"num": null, "pct": 0, "hit": false}}, "hits_count": 6, "first_month": "Abr/25", "is_new": false, "promotion_candidate": false}, {"nome": "MARIA DEBORA ALVES FERREIRA RAMOS", "cargo": "CONFERENTE DE EXPEDICAO JUNIOR", "funcao": "Conferente", "role": "Conferente", "shift": "Tarde", "horario": "11:40 às 21:40 hs", "monthly": {"Abr/25": {"num": 8269, "pct": 92, "hit": false}, "Mai/25": {"num": 5033, "pct": 57, "hit": false}, "Jun/25": {"num": 7294, "pct": 86, "hit": false}, "Jul/25": {"num": 5616, "pct": 62, "hit": false}, "Ago/25": {"num": 1669, "pct": 20, "hit": false}, "Set/25": {"num": 288, "pct": 3, "hit": false}, "Out/25": {"num": null, "pct": null, "hit": false}, "Nov/25": {"num": null, "pct": null, "hit": false}, "Dez/25": {"num": null, "pct": null, "hit": false}, "Jan/26": {"num": 594, "pct": 6, "hit": false}, "Fev/26": {"num": 182, "pct": 2, "hit": false}, "Mar/26": {"num": 158, "pct": 2, "hit": false}, "Abr/26": {"num": 150, "pct": 2, "hit": false}, "Mai/26": {"num": 34, "pct": 0, "hit": false}}, "hits_count": 0, "first_month": "Abr/25", "is_new": false, "promotion_candidate": false}, {"nome": "DOUGLAS FACCIO", "cargo": "AUX. DE LOGÍSTICA", "funcao": "Separador(a)", "role": "Separador", "shift": "Tarde", "horario": "11:40 às 21:40 hs", "monthly": {"Abr/25": {"num": null, "pct": null, "hit": false}, "Mai/25": {"num": null, "pct": null, "hit": false}, "Jun/25": {"num": null, "pct": null, "hit": false}, "Jul/25": {"num": null, "pct": null, "hit": false}, "Ago/25": {"num": 4925, "pct": 58, "hit": false}, "Set/25": {"num": 6958, "pct": 82, "hit": false}, "Out/25": {"num": 6187, "pct": 73, "hit": false}, "Nov/25": {"num": 5411, "pct": 64, "hit": false}, "Dez/25": {"num": 6277, "pct": 74, "hit": false}, "Jan/26": {"num": 7412, "pct": 87, "hit": false}, "Fev/26": {"num": 1791, "pct": 21, "hit": false}, "Mar/26": {"num": 6434, "pct": 76, "hit": false}, "Abr/26": {"num": 473, "pct": 6, "hit": false}, "Mai/26": {"num": 1337, "pct": 15, "hit": false}}, "hits_count": 0, "first_month": "Ago/25", "is_new": true, "promotion_candidate": false}, {"nome": "MAURICIO NOVAIS NASCIMENTO", "cargo": "CONFERENTE DE EXPEDICAO JUNIOR", "funcao": "Conferente", "role": "Conferente", "shift": "Tarde", "horario": "11:40 às 21:40 hs", "monthly": {"Abr/25": {"num": 9877, "pct": 110, "hit": true}, "Mai/25": {"num": 9017, "pct": 107, "hit": true}, "Jun/25": {"num": 9363, "pct": 110, "hit": true}, "Jul/25": {"num": 10463, "pct": 116, "hit": true}, "Ago/25": {"num": 273, "pct": 3, "hit": false}, "Set/25": {"num": 8425, "pct": 100, "hit": true}, "Out/25": {"num": 8511, "pct": 94, "hit": false}, "Nov/25": {"num": 6422, "pct": 71, "hit": false}, "Dez/25": {"num": 7380, "pct": 81, "hit": false}, "Jan/26": {"num": 9099, "pct": 90, "hit": false}, "Fev/26": {"num": 6208, "pct": 65, "hit": false}, "Mar/26": {"num": 8157, "pct": 90, "hit": false}, "Abr/26": {"num": 662, "pct": 7, "hit": false}, "Mai/26": {"num": 246, "pct": 3, "hit": false}}, "hits_count": 5, "first_month": "Abr/25", "is_new": false, "promotion_candidate": false}, {"nome": "JEFFERSON OLIVE", "cargo": "AUX. DE LOGÍSTICA", "funcao": "Separador(a)", "role": "Separador", "shift": "Tarde", "horario": "11:40 às 21:40 hs", "monthly": {"Abr/25": {"num": null, "pct": null, "hit": false}, "Mai/25": {"num": null, "pct": null, "hit": false}, "Jun/25": {"num": null, "pct": null, "hit": false}, "Jul/25": {"num": null, "pct": null, "hit": false}, "Ago/25": {"num": null, "pct": null, "hit": false}, "Set/25": {"num": 3482, "pct": 41, "hit": false}, "Out/25": {"num": 2674, "pct": 31, "hit": false}, "Nov/25": {"num": 0, "pct": 0, "hit": false}, "Dez/25": {"num": 0, "pct": 0, "hit": false}, "Jan/26": {"num": 0, "pct": 0, "hit": false}, "Fev/26": {"num": 0, "pct": 0, "hit": false}, "Mar/26": {"num": 0, "pct": 0, "hit": false}, "Abr/26": {"num": 0, "pct": 0, "hit": false}, "Mai/26": {"num": 0, "pct": 0, "hit": false}}, "hits_count": 0, "first_month": "Set/25", "is_new": true, "promotion_candidate": false}, {"nome": "HILARIO", "cargo": "", "funcao": "Separador(a)", "role": "Separador", "shift": "Manhã", "horario": "", "monthly": {"Abr/25": {"num": null, "pct": null, "hit": false}, "Mai/25": {"num": null, "pct": null, "hit": false}, "Jun/25": {"num": null, "pct": null, "hit": false}, "Jul/25": {"num": 0, "pct": 0, "hit": false}, "Ago/25": {"num": 0, "pct": 0, "hit": false}, "Set/25": {"num": 0, "pct": 0, "hit": false}, "Out/25": {"num": null, "pct": null, "hit": false}, "Nov/25": {"num": null, "pct": null, "hit": false}, "Dez/25": {"num": null, "pct": null, "hit": false}, "Jan/26": {"num": null, "pct": null, "hit": false}, "Fev/26": {"num": null, "pct": null, "hit": false}, "Mar/26": {"num": null, "pct": null, "hit": false}, "Abr/26": {"num": null, "pct": null, "hit": false}, "Mai/26": {"num": null, "pct": null, "hit": false}}, "hits_count": 0, "first_month": "Jul/25", "is_new": true, "promotion_candidate": false}, {"nome": "GUILHERME LOPES", "cargo": "AUX. DE LOGÍSTICA", "funcao": "Conferente", "role": "Conferente", "shift": "Tarde", "horario": "11:40 às 21:40 hs", "monthly": {"Abr/25": {"num": null, "pct": null, "hit": false}, "Mai/25": {"num": null, "pct": null, "hit": false}, "Jun/25": {"num": null, "pct": null, "hit": false}, "Jul/25": {"num": 3345, "pct": 40, "hit": false}, "Ago/25": {"num": 0, "pct": 0, "hit": false}, "Set/25": {"num": 0, "pct": 0, "hit": false}, "Out/25": {"num": 0, "pct": 0, "hit": false}, "Nov/25": {"num": 0, "pct": 0, "hit": false}, "Dez/25": {"num": 0, "pct": 0, "hit": false}, "Jan/26": {"num": 0, "pct": 0, "hit": false}, "Fev/26": {"num": 0, "pct": 0, "hit": false}, "Mar/26": {"num": 0, "pct": 0, "hit": false}, "Abr/26": {"num": 0, "pct": 0, "hit": false}, "Mai/26": {"num": 0, "pct": 0, "hit": false}}, "hits_count": 0, "first_month": "Jul/25", "is_new": true, "promotion_candidate": false}, {"nome": "VINICIUS RIBEI", "cargo": "AUX. DE LOGÍSTICA", "funcao": "Separador(a)", "role": "Separador", "shift": "Tarde", "horario": "11:40 às 21:40 hs", "monthly": {"Abr/25": {"num": null, "pct": null, "hit": false}, "Mai/25": {"num": null, "pct": null, "hit": false}, "Jun/25": {"num": null, "pct": null, "hit": false}, "Jul/25": {"num": null, "pct": null, "hit": false}, "Ago/25": {"num": null, "pct": null, "hit": false}, "Set/25": {"num": null, "pct": null, "hit": false}, "Out/25": {"num": null, "pct": null, "hit": false}, "Nov/25": {"num": null, "pct": null, "hit": false}, "Dez/25": {"num": 4517, "pct": 50, "hit": false}, "Jan/26": {"num": 2631, "pct": 31, "hit": false}, "Fev/26": {"num": 0, "pct": 0, "hit": false}, "Mar/26": {"num": 0, "pct": 0, "hit": false}, "Abr/26": {"num": 0, "pct": 0, "hit": false}, "Mai/26": {"num": 0, "pct": 0, "hit": false}}, "hits_count": 0, "first_month": "Dez/25", "is_new": true, "promotion_candidate": false}, {"nome": "GABRIEL FIGUEIR", "cargo": "AUX. DE LOGÍSTICA", "funcao": "Separador(a)", "role": "Separador", "shift": "Tarde", "horario": "11:40 às 21:40 hs", "monthly": {"Abr/25": {"num": null, "pct": null, "hit": false}, "Mai/25": {"num": null, "pct": null, "hit": false}, "Jun/25": {"num": null, "pct": null, "hit": false}, "Jul/25": {"num": null, "pct": null, "hit": false}, "Ago/25": {"num": null, "pct": null, "hit": false}, "Set/25": {"num": null, "pct": null, "hit": false}, "Out/25": {"num": null, "pct": null, "hit": false}, "Nov/25": {"num": null, "pct": null, "hit": false}, "Dez/25": {"num": null, "pct": null, "hit": false}, "Jan/26": {"num": null, "pct": null, "hit": false}, "Fev/26": {"num": 6581, "pct": 69, "hit": false}, "Mar/26": {"num": 9597, "pct": 113, "hit": true}, "Abr/26": {"num": 8719, "pct": 103, "hit": true}, "Mai/26": {"num": 1949, "pct": 22, "hit": false}}, "hits_count": 2, "first_month": "Fev/26", "is_new": true, "promotion_candidate": false}, {"nome": "LUCIANO PEREIRA", "cargo": "AUX. DE LOGÍSTICA", "funcao": "Separador(a)", "role": "Separador", "shift": "Tarde", "horario": "11:40 às 21:40 hs", "monthly": {"Abr/25": {"num": null, "pct": null, "hit": false}, "Mai/25": {"num": null, "pct": null, "hit": false}, "Jun/25": {"num": null, "pct": null, "hit": false}, "Jul/25": {"num": null, "pct": null, "hit": false}, "Ago/25": {"num": null, "pct": null, "hit": false}, "Set/25": {"num": null, "pct": null, "hit": false}, "Out/25": {"num": null, "pct": null, "hit": false}, "Nov/25": {"num": null, "pct": null, "hit": false}, "Dez/25": {"num": null, "pct": null, "hit": false}, "Jan/26": {"num": null, "pct": null, "hit": false}, "Fev/26": {"num": 8254, "pct": 87, "hit": false}, "Mar/26": {"num": 12932, "pct": 152, "hit": true}, "Abr/26": {"num": 11506, "pct": 135, "hit": true}, "Mai/26": {"num": 2932, "pct": 33, "hit": false}}, "hits_count": 2, "first_month": "Fev/26", "is_new": true, "promotion_candidate": false}, {"nome": "HARLEY DE SOUSA", "cargo": "AUX. DE LOGÍSTICA", "funcao": "Separador(a)", "role": "Separador", "shift": "Tarde", "horario": "11:40 às 21:40 hs", "monthly": {"Abr/25": {"num": null, "pct": null, "hit": false}, "Mai/25": {"num": null, "pct": null, "hit": false}, "Jun/25": {"num": null, "pct": null, "hit": false}, "Jul/25": {"num": 7055, "pct": 83, "hit": false}, "Ago/25": {"num": 8313, "pct": 98, "hit": false}, "Set/25": {"num": 5540, "pct": 66, "hit": false}, "Out/25": {"num": 7489, "pct": 88, "hit": false}, "Nov/25": {"num": 5795, "pct": 68, "hit": false}, "Dez/25": {"num": 4601, "pct": 54, "hit": false}, "Jan/26": {"num": 5257, "pct": 62, "hit": false}, "Fev/26": {"num": 5505, "pct": 58, "hit": false}, "Mar/26": {"num": 0, "pct": 0, "hit": false}, "Abr/26": {"num": null, "pct": null, "hit": false}, "Mai/26": {"num": null, "pct": null, "hit": false}}, "hits_count": 0, "first_month": "Jul/25", "is_new": true, "promotion_candidate": false}, {"nome": "FERNANDO CANDID", "cargo": "", "funcao": "Separador(a)", "role": "Separador", "shift": "Manhã", "horario": "", "monthly": {"Abr/25": {"num": null, "pct": null, "hit": false}, "Mai/25": {"num": null, "pct": null, "hit": false}, "Jun/25": {"num": null, "pct": null, "hit": false}, "Jul/25": {"num": 0, "pct": 0, "hit": false}, "Ago/25": {"num": 0, "pct": 0, "hit": false}, "Set/25": {"num": 0, "pct": 0, "hit": false}, "Out/25": {"num": 0, "pct": 0, "hit": false}, "Nov/25": {"num": 0, "pct": 0, "hit": false}, "Dez/25": {"num": null, "pct": null, "hit": false}, "Jan/26": {"num": null, "pct": null, "hit": false}, "Fev/26": {"num": null, "pct": null, "hit": false}, "Mar/26": {"num": null, "pct": null, "hit": false}, "Abr/26": {"num": null, "pct": null, "hit": false}, "Mai/26": {"num": null, "pct": null, "hit": false}}, "hits_count": 0, "first_month": "Jul/25", "is_new": true, "promotion_candidate": false}, {"nome": "MARCOS FERNANDE", "cargo": "AUX. DE LOGÍSTICA", "funcao": "Conferente", "role": "Conferente", "shift": "Tarde", "horario": "11:40 às 21:40 hs", "monthly": {"Abr/25": {"num": null, "pct": null, "hit": false}, "Mai/25": {"num": null, "pct": null, "hit": false}, "Jun/25": {"num": null, "pct": null, "hit": false}, "Jul/25": {"num": null, "pct": null, "hit": false}, "Ago/25": {"num": null, "pct": null, "hit": false}, "Set/25": {"num": null, "pct": null, "hit": false}, "Out/25": {"num": 238, "pct": 3, "hit": false}, "Nov/25": {"num": 5988, "pct": 70, "hit": false}, "Dez/25": {"num": null, "pct": 0, "hit": false}, "Jan/26": {"num": 8387, "pct": 99, "hit": false}, "Fev/26": {"num": 8833, "pct": 93, "hit": false}, "Mar/26": {"num": 9517, "pct": 108, "hit": true}, "Abr/26": {"num": 11210, "pct": 123, "hit": true}, "Mai/26": {"num": 2422, "pct": 25, "hit": false}}, "hits_count": 2, "first_month": "Out/25", "is_new": true, "promotion_candidate": false}, {"nome": "PAULO EDUARDO", "cargo": "AUX. DE LOGÍSTICA", "funcao": "Separador(a)", "role": "Separador", "shift": "Tarde", "horario": "11:40 às 21:40 hs", "monthly": {"Abr/25": {"num": null, "pct": null, "hit": false}, "Mai/25": {"num": null, "pct": null, "hit": false}, "Jun/25": {"num": null, "pct": null, "hit": false}, "Jul/25": {"num": 6073, "pct": 72, "hit": false}, "Ago/25": {"num": 7292, "pct": 86, "hit": false}, "Set/25": {"num": 5308, "pct": 63, "hit": false}, "Out/25": {"num": 7083, "pct": 83, "hit": false}, "Nov/25": {"num": 2027, "pct": 24, "hit": false}, "Dez/25": {"num": 496, "pct": 6, "hit": false}, "Jan/26": {"num": 847, "pct": 10, "hit": false}, "Fev/26": {"num": 640, "pct": 7, "hit": false}, "Mar/26": {"num": 442, "pct": 5, "hit": false}, "Abr/26": {"num": 406, "pct": 5, "hit": false}, "Mai/26": {"num": 224, "pct": 3, "hit": false}}, "hits_count": 0, "first_month": "Jul/25", "is_new": true, "promotion_candidate": false}, {"nome": "FRANCISCO BANDE", "cargo": "AUX. DE LOGÍSTICA", "funcao": "Separador(a)", "role": "Separador", "shift": "Manhã", "horario": "06:30 às 16:30 hs", "monthly": {"Abr/25": {"num": null, "pct": null, "hit": false}, "Mai/25": {"num": null, "pct": null, "hit": false}, "Jun/25": {"num": 0, "pct": 0, "hit": false}, "Jul/25": {"num": null, "pct": 0, "hit": false}, "Ago/25": {"num": null, "pct": null, "hit": false}, "Set/25": {"num": null, "pct": null, "hit": false}, "Out/25": {"num": null, "pct": null, "hit": false}, "Nov/25": {"num": null, "pct": null, "hit": false}, "Dez/25": {"num": null, "pct": null, "hit": false}, "Jan/26": {"num": null, "pct": null, "hit": false}, "Fev/26": {"num": null, "pct": null, "hit": false}, "Mar/26": {"num": null, "pct": null, "hit": false}, "Abr/26": {"num": null, "pct": null, "hit": false}, "Mai/26": {"num": null, "pct": null, "hit": false}}, "hits_count": 0, "first_month": "Jun/25", "is_new": false, "promotion_candidate": false}, {"nome": "CARLOS ALBERTO", "cargo": "OP. DE EMPILHADEIRA", "funcao": "Conferente", "role": "Conferente", "shift": "Noite", "horario": "22:00 às 06:48 hs", "monthly": {"Abr/25": {"num": 8313, "pct": 92, "hit": false}, "Mai/25": {"num": 9631, "pct": 109, "hit": true}, "Jun/25": {"num": 1993, "pct": 23, "hit": false}, "Jul/25": {"num": 8899, "pct": 99, "hit": false}, "Ago/25": {"num": 9170, "pct": 109, "hit": true}, "Set/25": {"num": 4727, "pct": 56, "hit": false}, "Out/25": {"num": 4387, "pct": 48, "hit": false}, "Nov/25": {"num": 4112, "pct": 45, "hit": false}, "Dez/25": {"num": 3111, "pct": 34, "hit": false}, "Jan/26": {"num": 7427, "pct": 74, "hit": false}, "Fev/26": {"num": 7926, "pct": 83, "hit": false}, "Mar/26": {"num": 5521, "pct": 61, "hit": false}, "Abr/26": {"num": 7125, "pct": 78, "hit": false}, "Mai/26": {"num": 2209, "pct": 23, "hit": false}}, "hits_count": 2, "first_month": "Abr/25", "is_new": false, "promotion_candidate": false}, {"nome": "CASSIO LUIS DE FREITAS", "cargo": "CONFERENTE DE EXPEDICAO JUNIOR", "funcao": "Conferente", "role": "Conferente", "shift": "Noite", "horario": "22:00 às 06:48 hs", "monthly": {"Abr/25": {"num": 9563, "pct": 106, "hit": true}, "Mai/25": {"num": 10726, "pct": 121, "hit": true}, "Jun/25": {"num": 7321, "pct": 86, "hit": false}, "Jul/25": {"num": 7445, "pct": 83, "hit": false}, "Ago/25": {"num": 11393, "pct": 135, "hit": true}, "Set/25": {"num": 9041, "pct": 107, "hit": true}, "Out/25": {"num": 10870, "pct": 119, "hit": true}, "Nov/25": {"num": 9125, "pct": 100, "hit": true}, "Dez/25": {"num": 7623, "pct": 84, "hit": false}, "Jan/26": {"num": 9575, "pct": 95, "hit": false}, "Fev/26": {"num": 8231, "pct": 87, "hit": false}, "Mar/26": {"num": 9101, "pct": 100, "hit": true}, "Abr/26": {"num": 9124, "pct": 100, "hit": true}, "Mai/26": {"num": 2308, "pct": 24, "hit": false}}, "hits_count": 8, "first_month": "Abr/25", "is_new": false, "promotion_candidate": true}, {"nome": "DANILO HELENO DA SILVA", "cargo": "CONFERENTE DE EXPEDICAO JUNIOR", "funcao": "Conferente", "role": "Conferente", "shift": "Noite", "horario": "22:00 às 06:48 hs", "monthly": {"Abr/25": {"num": 5327, "pct": 59, "hit": false}, "Mai/25": {"num": 1520, "pct": 18, "hit": false}, "Jun/25": {"num": null, "pct": null, "hit": false}, "Jul/25": {"num": null, "pct": null, "hit": false}, "Ago/25": {"num": 7336, "pct": 87, "hit": false}, "Set/25": {"num": 7908, "pct": 94, "hit": false}, "Out/25": {"num": 8897, "pct": 98, "hit": false}, "Nov/25": {"num": 7317, "pct": 80, "hit": false}, "Dez/25": {"num": 8056, "pct": 89, "hit": false}, "Jan/26": {"num": 7858, "pct": 78, "hit": false}, "Fev/26": {"num": 6748, "pct": 71, "hit": false}, "Mar/26": {"num": 0, "pct": 0, "hit": false}, "Abr/26": {"num": 6946, "pct": 76, "hit": false}, "Mai/26": {"num": 1520, "pct": 16, "hit": false}}, "hits_count": 0, "first_month": "Abr/25", "is_new": false, "promotion_candidate": false}, {"nome": "EVERALDO DA SILVA VIEIRA", "cargo": "CONFERENTE DE EXPEDICAO JUNIOR", "funcao": "Conferente", "role": "Conferente", "shift": "Noite", "horario": "22:00 às 06:48 hs", "monthly": {"Abr/25": {"num": 6738, "pct": 75, "hit": false}, "Mai/25": {"num": 8248, "pct": 93, "hit": false}, "Jun/25": {"num": 7591, "pct": 89, "hit": false}, "Jul/25": {"num": 9171, "pct": 102, "hit": true}, "Ago/25": {"num": 2872, "pct": 34, "hit": false}, "Set/25": {"num": 7228, "pct": 86, "hit": false}, "Out/25": {"num": 8182, "pct": 90, "hit": false}, "Nov/25": {"num": 6966, "pct": 77, "hit": false}, "Dez/25": {"num": 6271, "pct": 69, "hit": false}, "Jan/26": {"num": 4701, "pct": 47, "hit": false}, "Fev/26": {"num": 0, "pct": 0, "hit": false}, "Mar/26": {"num": 0, "pct": 0, "hit": false}, "Abr/26": {"num": 0, "pct": 0, "hit": false}, "Mai/26": {"num": 0, "pct": 0, "hit": false}}, "hits_count": 1, "first_month": "Abr/25", "is_new": false, "promotion_candidate": false}, {"nome": "GABRIEL GOMES", "cargo": "", "funcao": "Separador(a)", "role": "Separador", "shift": "Tarde", "horario": "11:40 às 21:40 hs", "monthly": {"Abr/25": {"num": null, "pct": null, "hit": false}, "Mai/25": {"num": null, "pct": null, "hit": false}, "Jun/25": {"num": 3845, "pct": 45, "hit": false}, "Jul/25": {"num": 4722, "pct": 56, "hit": false}, "Ago/25": {"num": 2974, "pct": 35, "hit": false}, "Set/25": {"num": 0, "pct": 0, "hit": false}, "Out/25": {"num": 0, "pct": 0, "hit": false}, "Nov/25": {"num": 0, "pct": 0, "hit": false}, "Dez/25": {"num": null, "pct": null, "hit": false}, "Jan/26": {"num": null, "pct": null, "hit": false}, "Fev/26": {"num": null, "pct": null, "hit": false}, "Mar/26": {"num": null, "pct": null, "hit": false}, "Abr/26": {"num": null, "pct": null, "hit": false}, "Mai/26": {"num": null, "pct": null, "hit": false}}, "hits_count": 0, "first_month": "Jun/25", "is_new": false, "promotion_candidate": false}, {"nome": "GUILHERME RIBEIRO PAVIM SILVA", "cargo": "AUX. DE LOGÍSTICA", "funcao": "Separador(a)", "role": "Separador", "shift": "Noite", "horario": "22:00 às 06:48 hs", "monthly": {"Abr/25": {"num": 6606, "pct": 77, "hit": false}, "Mai/25": {"num": 6602, "pct": 79, "hit": false}, "Jun/25": {"num": 8641, "pct": 102, "hit": true}, "Jul/25": {"num": 8751, "pct": 104, "hit": true}, "Ago/25": {"num": 5926, "pct": 70, "hit": false}, "Set/25": {"num": 1000, "pct": 12, "hit": false}, "Out/25": {"num": 0, "pct": 0, "hit": false}, "Nov/25": {"num": 0, "pct": 0, "hit": false}, "Dez/25": {"num": null, "pct": null, "hit": false}, "Jan/26": {"num": null, "pct": null, "hit": false}, "Fev/26": {"num": null, "pct": null, "hit": false}, "Mar/26": {"num": null, "pct": null, "hit": false}, "Abr/26": {"num": null, "pct": null, "hit": false}, "Mai/26": {"num": null, "pct": null, "hit": false}}, "hits_count": 2, "first_month": "Abr/25", "is_new": false, "promotion_candidate": false}, {"nome": "JHONNY DE FREITAS FERREIRA", "cargo": "AUX. DE LOGÍSTICA", "funcao": "Separador(a)", "role": "Separador", "shift": "Noite", "horario": "22:00 às 06:48 hs", "monthly": {"Abr/25": {"num": 1667, "pct": 19, "hit": false}, "Mai/25": {"num": 7018, "pct": 84, "hit": false}, "Jun/25": {"num": 8220, "pct": 97, "hit": false}, "Jul/25": {"num": 7278, "pct": 86, "hit": false}, "Ago/25": {"num": 5242, "pct": 62, "hit": false}, "Set/25": {"num": 3829, "pct": 45, "hit": false}, "Out/25": {"num": 1325, "pct": 16, "hit": false}, "Nov/25": {"num": 8004, "pct": 94, "hit": false}, "Dez/25": {"num": 2255, "pct": 27, "hit": false}, "Jan/26": {"num": 0, "pct": 0, "hit": false}, "Fev/26": {"num": 0, "pct": 0, "hit": false}, "Mar/26": {"num": null, "pct": null, "hit": false}, "Abr/26": {"num": null, "pct": null, "hit": false}, "Mai/26": {"num": null, "pct": null, "hit": false}}, "hits_count": 0, "first_month": "Abr/25", "is_new": false, "promotion_candidate": false}, {"nome": "RUBENILDO SILVA CERQUEIRA", "cargo": "AUX. DE LOGÍSTICA", "funcao": "Separador(a)", "role": "Separador", "shift": "Noite", "horario": "22:00 às 06:48 hs", "monthly": {"Abr/25": {"num": null, "pct": null, "hit": true}, "Mai/25": {"num": null, "pct": null, "hit": true}, "Jun/25": {"num": 2673, "pct": 31, "hit": false}, "Jul/25": {"num": 4826, "pct": 57, "hit": false}, "Ago/25": {"num": 1435, "pct": 17, "hit": false}, "Set/25": {"num": 5041, "pct": 60, "hit": false}, "Out/25": {"num": 6193, "pct": 73, "hit": false}, "Nov/25": {"num": 6754, "pct": 79, "hit": false}, "Dez/25": {"num": 6134, "pct": 72, "hit": false}, "Jan/26": {"num": 4738, "pct": 56, "hit": false}, "Fev/26": {"num": 1593, "pct": 17, "hit": false}, "Mar/26": {"num": 3362, "pct": 37, "hit": false}, "Abr/26": {"num": 0, "pct": 0, "hit": false}, "Mai/26": {"num": 0, "pct": 0, "hit": false}}, "hits_count": 0, "first_month": "Jun/25", "is_new": false, "promotion_candidate": false}, {"nome": "JOHN MIKE RODRIGUES DA SILVA", "cargo": "AUX. DE LOGÍSTICA", "funcao": "Separador(a)", "role": "Separador", "shift": "Noite", "horario": "22:00 às 06:48 hs", "monthly": {"Abr/25": {"num": 9538, "pct": 112, "hit": true}, "Mai/25": {"num": 8841, "pct": 105, "hit": true}, "Jun/25": {"num": 8128, "pct": 96, "hit": false}, "Jul/25": {"num": 3792, "pct": 45, "hit": false}, "Ago/25": {"num": 10386, "pct": 123, "hit": true}, "Set/25": {"num": 9432, "pct": 112, "hit": true}, "Out/25": {"num": 9129, "pct": 107, "hit": true}, "Nov/25": {"num": 965, "pct": 11, "hit": false}, "Dez/25": {"num": 1979, "pct": 23, "hit": false}, "Jan/26": {"num": 10746, "pct": 126, "hit": true}, "Fev/26": {"num": 8078, "pct": 85, "hit": false}, "Mar/26": {"num": 8821, "pct": 104, "hit": true}, "Abr/26": {"num": 2157, "pct": 25, "hit": false}, "Mai/26": {"num": 1753, "pct": 20, "hit": false}}, "hits_count": 7, "first_month": "Abr/25", "is_new": false, "promotion_candidate": false}, {"nome": "JOHNATHAN FREITAS LEAL DA SILVA", "cargo": "CONFERENTE DE EXPEDICAO JUNIOR", "funcao": "Conferente", "role": "Conferente", "shift": "Noite", "horario": "22:00 às 06:48 hs", "monthly": {"Abr/25": {"num": 2604, "pct": 29, "hit": false}, "Mai/25": {"num": 315, "pct": 4, "hit": false}, "Jun/25": {"num": 446, "pct": 5, "hit": false}, "Jul/25": {"num": 0, "pct": 0, "hit": false}, "Ago/25": {"num": 0, "pct": 0, "hit": false}, "Set/25": {"num": 0, "pct": 0, "hit": false}, "Out/25": {"num": 0, "pct": 0, "hit": false}, "Nov/25": {"num": 0, "pct": 0, "hit": false}, "Dez/25": {"num": null, "pct": null, "hit": false}, "Jan/26": {"num": null, "pct": null, "hit": false}, "Fev/26": {"num": null, "pct": null, "hit": false}, "Mar/26": {"num": null, "pct": null, "hit": false}, "Abr/26": {"num": null, "pct": null, "hit": false}, "Mai/26": {"num": null, "pct": null, "hit": false}}, "hits_count": 0, "first_month": "Abr/25", "is_new": false, "promotion_candidate": false}, {"nome": "JONES MARQUES AZEVEDO", "cargo": "AUX. DE LOGÍSTICA", "funcao": "Separador(a)", "role": "Separador", "shift": "Noite", "horario": "22:00 às 06:48 hs", "monthly": {"Abr/25": {"num": 6376, "pct": 75, "hit": false}, "Mai/25": {"num": 5398, "pct": 64, "hit": false}, "Jun/25": {"num": 5519, "pct": 65, "hit": false}, "Jul/25": {"num": 2581, "pct": 31, "hit": false}, "Ago/25": {"num": 0, "pct": 0, "hit": false}, "Set/25": {"num": 0, "pct": 0, "hit": false}, "Out/25": {"num": 0, "pct": 0, "hit": false}, "Nov/25": {"num": null, "pct": null, "hit": false}, "Dez/25": {"num": null, "pct": null, "hit": false}, "Jan/26": {"num": null, "pct": null, "hit": false}, "Fev/26": {"num": null, "pct": null, "hit": false}, "Mar/26": {"num": null, "pct": null, "hit": false}, "Abr/26": {"num": null, "pct": null, "hit": false}, "Mai/26": {"num": null, "pct": null, "hit": false}}, "hits_count": 0, "first_month": "Abr/25", "is_new": false, "promotion_candidate": false}, {"nome": "CLAYTON JOSE", "cargo": "AUX. DE LOGÍSTICA", "funcao": "Separador(a)", "role": "Separador", "shift": "Noite", "horario": "22:00 às 06:48 hs", "monthly": {"Abr/25": {"num": null, "pct": null, "hit": true}, "Mai/25": {"num": null, "pct": null, "hit": true}, "Jun/25": {"num": null, "pct": null, "hit": true}, "Jul/25": {"num": null, "pct": null, "hit": false}, "Ago/25": {"num": null, "pct": null, "hit": true}, "Set/25": {"num": null, "pct": null, "hit": true}, "Out/25": {"num": 1988, "pct": 23, "hit": false}, "Nov/25": {"num": 4721, "pct": 56, "hit": false}, "Dez/25": {"num": 4922, "pct": 58, "hit": false}, "Jan/26": {"num": 2877, "pct": 34, "hit": false}, "Fev/26": {"num": 37, "pct": 0, "hit": false}, "Mar/26": {"num": 0, "pct": 0, "hit": false}, "Abr/26": {"num": null, "pct": null, "hit": false}, "Mai/26": {"num": null, "pct": null, "hit": false}}, "hits_count": 0, "first_month": "Out/25", "is_new": true, "promotion_candidate": false}, {"nome": "MAICON ROSA DA SILVA", "cargo": "AUX. DE LOGÍSTICA", "funcao": "Conferente", "role": "Conferente", "shift": "Noite", "horario": "22:00 às 06:48 hs", "monthly": {"Abr/25": {"num": 10115, "pct": 112, "hit": true}, "Mai/25": {"num": 10246, "pct": 115, "hit": true}, "Jun/25": {"num": 10125, "pct": 119, "hit": true}, "Jul/25": {"num": 11815, "pct": 131, "hit": false}, "Ago/25": {"num": 10694, "pct": 127, "hit": true}, "Set/25": {"num": 9801, "pct": 116, "hit": true}, "Out/25": {"num": 11306, "pct": 124, "hit": true}, "Nov/25": {"num": 8268, "pct": 91, "hit": false}, "Dez/25": {"num": 10172, "pct": 112, "hit": true}, "Jan/26": {"num": 2961, "pct": 29, "hit": false}, "Fev/26": {"num": 9405, "pct": 99, "hit": false}, "Mar/26": {"num": 8798, "pct": 97, "hit": false}, "Abr/26": {"num": 7707, "pct": 85, "hit": false}, "Mai/26": {"num": 1519, "pct": 16, "hit": false}}, "hits_count": 7, "first_month": "Abr/25", "is_new": false, "promotion_candidate": false}, {"nome": "JOSEMAR", "cargo": "AUX. DE LOGÍSTICA", "funcao": "Separador(a)", "role": "Separador", "shift": "Noite", "horario": "22:00 às 06:48 hs", "monthly": {"Abr/25": {"num": null, "pct": null, "hit": false}, "Mai/25": {"num": null, "pct": null, "hit": false}, "Jun/25": {"num": null, "pct": null, "hit": false}, "Jul/25": {"num": null, "pct": null, "hit": true}, "Ago/25": {"num": null, "pct": null, "hit": false}, "Set/25": {"num": null, "pct": null, "hit": false}, "Out/25": {"num": null, "pct": null, "hit": true}, "Nov/25": {"num": null, "pct": null, "hit": false}, "Dez/25": {"num": null, "pct": null, "hit": false}, "Jan/26": {"num": null, "pct": null, "hit": false}, "Fev/26": {"num": 3756, "pct": 40, "hit": false}, "Mar/26": {"num": 6809, "pct": 80, "hit": false}, "Abr/26": {"num": 6331, "pct": 74, "hit": false}, "Mai/26": {"num": 511, "pct": 6, "hit": false}}, "hits_count": 0, "first_month": "Fev/26", "is_new": true, "promotion_candidate": false}, {"nome": "NICOLAS MOURA", "cargo": "AUX. DE LOGÍSTICA", "funcao": "Separador(a)", "role": "Separador", "shift": "Noite", "horario": "22:00 às 06:48 hs", "monthly": {"Abr/25": {"num": null, "pct": null, "hit": false}, "Mai/25": {"num": null, "pct": null, "hit": false}, "Jun/25": {"num": null, "pct": null, "hit": false}, "Jul/25": {"num": null, "pct": null, "hit": true}, "Ago/25": {"num": null, "pct": null, "hit": false}, "Set/25": {"num": null, "pct": null, "hit": false}, "Out/25": {"num": null, "pct": null, "hit": true}, "Nov/25": {"num": null, "pct": null, "hit": false}, "Dez/25": {"num": null, "pct": null, "hit": false}, "Jan/26": {"num": null, "pct": null, "hit": false}, "Fev/26": {"num": 726, "pct": 8, "hit": false}, "Mar/26": {"num": 1762, "pct": 21, "hit": false}, "Abr/26": {"num": 312, "pct": 4, "hit": false}, "Mai/26": {"num": 0, "pct": 0, "hit": false}}, "hits_count": 0, "first_month": "Fev/26", "is_new": true, "promotion_candidate": false}, {"nome": "FERNANDO FONTAN", "cargo": "AUX. DE LOGÍSTICA", "funcao": "Separador(a)", "role": "Separador", "shift": "Noite", "horario": "22:00 às 06:48 hs", "monthly": {"Abr/25": {"num": null, "pct": null, "hit": false}, "Mai/25": {"num": null, "pct": null, "hit": false}, "Jun/25": {"num": null, "pct": null, "hit": false}, "Jul/25": {"num": null, "pct": null, "hit": true}, "Ago/25": {"num": null, "pct": null, "hit": false}, "Set/25": {"num": null, "pct": null, "hit": false}, "Out/25": {"num": null, "pct": null, "hit": true}, "Nov/25": {"num": null, "pct": null, "hit": false}, "Dez/25": {"num": null, "pct": null, "hit": false}, "Jan/26": {"num": 0, "pct": 0, "hit": false}, "Fev/26": {"num": 0, "pct": 0, "hit": false}, "Mar/26": {"num": 0, "pct": 0, "hit": false}, "Abr/26": {"num": null, "pct": null, "hit": false}, "Mai/26": {"num": null, "pct": null, "hit": false}}, "hits_count": 0, "first_month": "Jan/26", "is_new": true, "promotion_candidate": false}, {"nome": "SILVIO GOMES", "cargo": "AUX. DE LOGÍSTICA", "funcao": "Separador(a)", "role": "Separador", "shift": "Noite", "horario": "22:00 às 06:48 hs", "monthly": {"Abr/25": {"num": null, "pct": null, "hit": false}, "Mai/25": {"num": null, "pct": null, "hit": false}, "Jun/25": {"num": null, "pct": null, "hit": false}, "Jul/25": {"num": null, "pct": null, "hit": true}, "Ago/25": {"num": 5350, "pct": 63, "hit": false}, "Set/25": {"num": 8272, "pct": 98, "hit": false}, "Out/25": {"num": 8515, "pct": 100, "hit": true}, "Nov/25": {"num": 7455, "pct": 88, "hit": false}, "Dez/25": {"num": 6051, "pct": 71, "hit": false}, "Jan/26": {"num": 6918, "pct": 81, "hit": false}, "Fev/26": {"num": 6777, "pct": 71, "hit": false}, "Mar/26": {"num": 6481, "pct": 76, "hit": false}, "Abr/26": {"num": 6462, "pct": 76, "hit": false}, "Mai/26": {"num": 1691, "pct": 19, "hit": false}}, "hits_count": 1, "first_month": "Ago/25", "is_new": true, "promotion_candidate": false}, {"nome": "MATHEUS FELIPE DOS SANTOS", "cargo": "AUX. DE LOGÍSTICA", "funcao": "Separador(a)", "role": "Separador", "shift": "Noite", "horario": "22:00 às 06:48 hs", "monthly": {"Abr/25": {"num": 7621, "pct": 89, "hit": false}, "Mai/25": {"num": 7561, "pct": 90, "hit": false}, "Jun/25": {"num": 6576, "pct": 77, "hit": false}, "Jul/25": {"num": 8769, "pct": 104, "hit": true}, "Ago/25": {"num": 6435, "pct": 76, "hit": false}, "Set/25": {"num": 6472, "pct": 77, "hit": false}, "Out/25": {"num": 5785, "pct": 68, "hit": false}, "Nov/25": {"num": 3121, "pct": 37, "hit": false}, "Dez/25": {"num": 3628, "pct": 43, "hit": false}, "Jan/26": {"num": 3850, "pct": 45, "hit": false}, "Fev/26": {"num": 0, "pct": 0, "hit": false}, "Mar/26": {"num": 0, "pct": 0, "hit": false}, "Abr/26": {"num": null, "pct": null, "hit": false}, "Mai/26": {"num": null, "pct": null, "hit": false}}, "hits_count": 1, "first_month": "Abr/25", "is_new": false, "promotion_candidate": false}, {"nome": "BRUNO ROSA", "cargo": "AUX. DE LOGÍSTICA", "funcao": "Separador(a)", "role": "Separador", "shift": "Noite", "horario": "22:00 às 06:48 hs", "monthly": {"Abr/25": {"num": null, "pct": null, "hit": false}, "Mai/25": {"num": 2877, "pct": 34, "hit": false}, "Jun/25": {"num": 4683, "pct": 55, "hit": false}, "Jul/25": {"num": 5338, "pct": 63, "hit": false}, "Ago/25": {"num": 4063, "pct": 48, "hit": false}, "Set/25": {"num": 0, "pct": 0, "hit": false}, "Out/25": {"num": null, "pct": null, "hit": false}, "Nov/25": {"num": null, "pct": null, "hit": false}, "Dez/25": {"num": null, "pct": null, "hit": false}, "Jan/26": {"num": null, "pct": null, "hit": false}, "Fev/26": {"num": null, "pct": null, "hit": false}, "Mar/26": {"num": null, "pct": null, "hit": false}, "Abr/26": {"num": null, "pct": null, "hit": false}, "Mai/26": {"num": null, "pct": null, "hit": false}}, "hits_count": 0, "first_month": "Mai/25", "is_new": false, "promotion_candidate": false}, {"nome": "MARCOS ROBERTO", "cargo": "AUX. DE LOGÍSTICA", "funcao": "Separador(a)", "role": "Separador", "shift": "Noite", "horario": "22:00 às 06:48 hs", "monthly": {"Abr/25": {"num": null, "pct": null, "hit": false}, "Mai/25": {"num": 2289, "pct": 27, "hit": false}, "Jun/25": {"num": 3799, "pct": 45, "hit": false}, "Jul/25": {"num": 5323, "pct": 63, "hit": false}, "Ago/25": {"num": 4561, "pct": 54, "hit": false}, "Set/25": {"num": 0, "pct": 0, "hit": false}, "Out/25": {"num": 0, "pct": 0, "hit": false}, "Nov/25": {"num": 0, "pct": 0, "hit": false}, "Dez/25": {"num": 0, "pct": 0, "hit": false}, "Jan/26": {"num": null, "pct": null, "hit": false}, "Fev/26": {"num": null, "pct": null, "hit": false}, "Mar/26": {"num": null, "pct": null, "hit": false}, "Abr/26": {"num": null, "pct": null, "hit": false}, "Mai/26": {"num": null, "pct": null, "hit": false}}, "hits_count": 0, "first_month": "Mai/25", "is_new": false, "promotion_candidate": false}, {"nome": "MICHEL SILVA", "cargo": "CONFERENTE DE EXPEDICAO JUNIOR", "funcao": "Conferente", "role": "Conferente", "shift": "Noite", "horario": "22:00 às 06:48 hs", "monthly": {"Abr/25": {"num": 9683, "pct": 107, "hit": true}, "Mai/25": {"num": 9230, "pct": 104, "hit": true}, "Jun/25": {"num": 8278, "pct": 97, "hit": false}, "Jul/25": {"num": 3125, "pct": 98, "hit": false}, "Ago/25": {"num": 7900, "pct": 93, "hit": false}, "Set/25": {"num": 7798, "pct": 92, "hit": false}, "Out/25": {"num": 8781, "pct": 96, "hit": false}, "Nov/25": {"num": 8471, "pct": 93, "hit": false}, "Dez/25": {"num": null, "pct": 0, "hit": false}, "Jan/26": {"num": 8713, "pct": 86, "hit": false}, "Fev/26": {"num": 7992, "pct": 84, "hit": false}, "Mar/26": {"num": 9013, "pct": 99, "hit": false}, "Abr/26": {"num": 8813, "pct": 97, "hit": false}, "Mai/26": {"num": 2077, "pct": 21, "hit": false}}, "hits_count": 2, "first_month": "Abr/25", "is_new": false, "promotion_candidate": false}, {"nome": "MATHEUS COELHO", "cargo": "AUX. DE LOGÍSTICA", "funcao": "Separador(a)", "role": "Separador", "shift": "Noite", "horario": "22:00 às 06:48 hs", "monthly": {"Abr/25": {"num": null, "pct": null, "hit": false}, "Mai/25": {"num": null, "pct": null, "hit": true}, "Jun/25": {"num": null, "pct": null, "hit": false}, "Jul/25": {"num": null, "pct": null, "hit": false}, "Ago/25": {"num": null, "pct": null, "hit": false}, "Set/25": {"num": null, "pct": null, "hit": true}, "Out/25": {"num": null, "pct": null, "hit": true}, "Nov/25": {"num": null, "pct": null, "hit": false}, "Dez/25": {"num": 3045, "pct": 33, "hit": false}, "Jan/26": {"num": 184, "pct": 2, "hit": false}, "Fev/26": {"num": 46, "pct": 0, "hit": false}, "Mar/26": {"num": 0, "pct": 0, "hit": false}, "Abr/26": {"num": 0, "pct": 0, "hit": false}, "Mai/26": {"num": 0, "pct": 0, "hit": false}}, "hits_count": 0, "first_month": "Dez/25", "is_new": true, "promotion_candidate": false}, {"nome": "OSVALDO JUNIOR DA SILVA DORTA", "cargo": "CONFERENTE DE EXPEDICAO JUNIOR", "funcao": "Conferente", "role": "Conferente", "shift": "Noite", "horario": "22:00 às 06:48 hs", "monthly": {"Abr/25": {"num": 3215, "pct": 36, "hit": false}, "Mai/25": {"num": 9428, "pct": 106, "hit": true}, "Jun/25": {"num": 8433, "pct": 99, "hit": false}, "Jul/25": {"num": null, "pct": 0, "hit": false}, "Ago/25": {"num": 8061, "pct": 95, "hit": false}, "Set/25": {"num": 9125, "pct": 108, "hit": true}, "Out/25": {"num": 9764, "pct": 107, "hit": true}, "Nov/25": {"num": 8487, "pct": 93, "hit": false}, "Dez/25": {"num": 7965, "pct": 88, "hit": false}, "Jan/26": {"num": 7823, "pct": 77, "hit": false}, "Fev/26": {"num": 2630, "pct": 28, "hit": false}, "Mar/26": {"num": 7555, "pct": 83, "hit": false}, "Abr/26": {"num": 9270, "pct": 102, "hit": true}, "Mai/26": {"num": 1976, "pct": 20, "hit": false}}, "hits_count": 4, "first_month": "Abr/25", "is_new": false, "promotion_candidate": false}, {"nome": "PETERSON MARTINS DOS SANTOS", "cargo": "AUX. DE LOGÍSTICA", "funcao": "Separador(a)", "role": "Separador", "shift": "Noite", "horario": "22:00 às 06:48 hs", "monthly": {"Abr/25": {"num": 9213, "pct": 108, "hit": true}, "Mai/25": {"num": 9579, "pct": 114, "hit": true}, "Jun/25": {"num": 2136, "pct": 25, "hit": false}, "Jul/25": {"num": 8884, "pct": 105, "hit": true}, "Ago/25": {"num": 8517, "pct": 101, "hit": true}, "Set/25": {"num": 7953, "pct": 94, "hit": false}, "Out/25": {"num": 9931, "pct": 117, "hit": true}, "Nov/25": {"num": 10157, "pct": 119, "hit": true}, "Dez/25": {"num": 5860, "pct": 69, "hit": false}, "Jan/26": {"num": 7500, "pct": 88, "hit": false}, "Fev/26": {"num": 6127, "pct": 72, "hit": false}, "Mar/26": {"num": 6102, "pct": 72, "hit": false}, "Abr/26": {"num": 5217, "pct": 61, "hit": false}, "Mai/26": {"num": 1409, "pct": 16, "hit": false}}, "hits_count": 6, "first_month": "Abr/25", "is_new": false, "promotion_candidate": false}, {"nome": "CARLOS LOPES", "cargo": "AUX. DE LOGÍSTICA", "funcao": "Separador(a)", "role": "Separador", "shift": "Noite", "horario": "22:00 às 06:48 hs", "monthly": {"Abr/25": {"num": null, "pct": null, "hit": false}, "Mai/25": {"num": null, "pct": null, "hit": false}, "Jun/25": {"num": null, "pct": null, "hit": false}, "Jul/25": {"num": null, "pct": null, "hit": false}, "Ago/25": {"num": null, "pct": null, "hit": false}, "Set/25": {"num": null, "pct": null, "hit": false}, "Out/25": {"num": null, "pct": null, "hit": false}, "Nov/25": {"num": null, "pct": null, "hit": false}, "Dez/25": {"num": null, "pct": null, "hit": false}, "Jan/26": {"num": null, "pct": null, "hit": false}, "Fev/26": {"num": null, "pct": null, "hit": false}, "Mar/26": {"num": 0, "pct": 0, "hit": false}, "Abr/26": {"num": null, "pct": null, "hit": false}, "Mai/26": {"num": null, "pct": null, "hit": false}}, "hits_count": 0, "first_month": "Mar/26", "is_new": true, "promotion_candidate": false}, {"nome": "LEONIDAS", "cargo": "AUX. DE LOGÍSTICA", "funcao": "Separador(a)", "role": "Separador", "shift": "Noite", "horario": "22:00 às 06:48 hs", "monthly": {"Abr/25": {"num": null, "pct": null, "hit": false}, "Mai/25": {"num": null, "pct": null, "hit": false}, "Jun/25": {"num": null, "pct": null, "hit": false}, "Jul/25": {"num": null, "pct": null, "hit": false}, "Ago/25": {"num": null, "pct": null, "hit": false}, "Set/25": {"num": null, "pct": null, "hit": false}, "Out/25": {"num": null, "pct": null, "hit": false}, "Nov/25": {"num": null, "pct": null, "hit": false}, "Dez/25": {"num": null, "pct": null, "hit": false}, "Jan/26": {"num": null, "pct": null, "hit": false}, "Fev/26": {"num": null, "pct": null, "hit": false}, "Mar/26": {"num": 575, "pct": 7, "hit": false}, "Abr/26": {"num": 5745, "pct": 68, "hit": false}, "Mai/26": {"num": 1792, "pct": 20, "hit": false}}, "hits_count": 0, "first_month": "Mar/26", "is_new": true, "promotion_candidate": false}, {"nome": "WESLEY FIORAVAN", "cargo": "AUX. DE LOGÍSTICA", "funcao": "Separador(a)", "role": "Separador", "shift": "Noite", "horario": "22:00 às 06:48 hs", "monthly": {"Abr/25": {"num": null, "pct": null, "hit": false}, "Mai/25": {"num": null, "pct": null, "hit": false}, "Jun/25": {"num": null, "pct": null, "hit": false}, "Jul/25": {"num": null, "pct": null, "hit": false}, "Ago/25": {"num": null, "pct": null, "hit": false}, "Set/25": {"num": null, "pct": null, "hit": false}, "Out/25": {"num": null, "pct": null, "hit": false}, "Nov/25": {"num": null, "pct": null, "hit": false}, "Dez/25": {"num": null, "pct": null, "hit": false}, "Jan/26": {"num": null, "pct": null, "hit": false}, "Fev/26": {"num": null, "pct": null, "hit": false}, "Mar/26": {"num": 5075, "pct": 60, "hit": false}, "Abr/26": {"num": 5843, "pct": 69, "hit": false}, "Mai/26": {"num": 1269, "pct": 14, "hit": false}}, "hits_count": 0, "first_month": "Mar/26", "is_new": true, "promotion_candidate": false}, {"nome": "RODRIGO SOUSA SANTOS", "cargo": "AUX. DE LOGÍSTICA", "funcao": "Separador(a)", "role": "Separador", "shift": "Noite", "horario": "22:00 às 06:48 hs", "monthly": {"Abr/25": {"num": 5586, "pct": 65, "hit": false}, "Mai/25": {"num": 5531, "pct": 66, "hit": false}, "Jun/25": {"num": 4882, "pct": 57, "hit": false}, "Jul/25": {"num": 6924, "pct": 82, "hit": false}, "Ago/25": {"num": 5886, "pct": 70, "hit": false}, "Set/25": {"num": 6640, "pct": 79, "hit": false}, "Out/25": {"num": 6613, "pct": 78, "hit": false}, "Nov/25": {"num": 6680, "pct": 79, "hit": false}, "Dez/25": {"num": 5136, "pct": 60, "hit": false}, "Jan/26": {"num": 6892, "pct": 81, "hit": false}, "Fev/26": {"num": 1584, "pct": 19, "hit": false}, "Mar/26": {"num": 5777, "pct": 68, "hit": false}, "Abr/26": {"num": 5949, "pct": 70, "hit": false}, "Mai/26": {"num": 1492, "pct": 17, "hit": false}}, "hits_count": 0, "first_month": "Abr/25", "is_new": false, "promotion_candidate": false}, {"nome": "WENDELL BRITO", "cargo": "AUX. DE LOGÍSTICA", "funcao": "Separador(a)", "role": "Separador", "shift": "Noite", "horario": "22:00 às 06:48 hs", "monthly": {"Abr/25": {"num": null, "pct": null, "hit": false}, "Mai/25": {"num": null, "pct": null, "hit": false}, "Jun/25": {"num": null, "pct": null, "hit": false}, "Jul/25": {"num": null, "pct": null, "hit": false}, "Ago/25": {"num": null, "pct": null, "hit": false}, "Set/25": {"num": null, "pct": null, "hit": false}, "Out/25": {"num": 2243, "pct": 26, "hit": false}, "Nov/25": {"num": 6202, "pct": 73, "hit": false}, "Dez/25": {"num": 7532, "pct": 89, "hit": false}, "Jan/26": {"num": 0, "pct": 0, "hit": false}, "Fev/26": {"num": 0, "pct": 0, "hit": false}, "Mar/26": {"num": null, "pct": null, "hit": false}, "Abr/26": {"num": null, "pct": null, "hit": false}, "Mai/26": {"num": null, "pct": null, "hit": false}}, "hits_count": 0, "first_month": "Out/25", "is_new": true, "promotion_candidate": false}, {"nome": "VICTOR GOMES SILVA", "cargo": "AUX. DE LOGÍSTICA", "funcao": "Separador(a)", "role": "Separador", "shift": "Noite", "horario": "22:00 às 06:48 hs", "monthly": {"Abr/25": {"num": 5587, "pct": 65, "hit": false}, "Mai/25": {"num": 5532, "pct": 66, "hit": false}, "Jun/25": {"num": 4883, "pct": 57, "hit": false}, "Jul/25": {"num": 6925, "pct": 82, "hit": false}, "Ago/25": {"num": null, "pct": null, "hit": false}, "Set/25": {"num": null, "pct": null, "hit": false}, "Out/25": {"num": null, "pct": null, "hit": false}, "Nov/25": {"num": null, "pct": null, "hit": false}, "Dez/25": {"num": null, "pct": null, "hit": false}, "Jan/26": {"num": null, "pct": null, "hit": false}, "Fev/26": {"num": null, "pct": null, "hit": false}, "Mar/26": {"num": null, "pct": null, "hit": false}, "Abr/26": {"num": null, "pct": null, "hit": false}, "Mai/26": {"num": null, "pct": null, "hit": false}}, "hits_count": 0, "first_month": "Abr/25", "is_new": false, "promotion_candidate": false}];
 
-let filters = { shift: 'all', role: 'all', status: 'all' };
-let searchQuery = '';
+const MONTHS_2025 = MONTHS.filter(m => m.includes('25'));
+const MONTHS_2026 = MONTHS.filter(m => m.includes('26'));
+const TOTAL_2025 = MONTHS_2025.length; // 9
+const TOTAL_2026 = MONTHS_2026.length; // 5
+
+EMPLOYEES.forEach(e => {
+  e.hits2025 = MONTHS_2025.filter(m => e.monthly[m]?.hit && e.monthly[m]?.num !== null).length;
+  e.hits2026 = MONTHS_2026.filter(m => e.monthly[m]?.hit && e.monthly[m]?.num !== null).length;
+  e.promo2025 = e.hits2025 >= 8;
+  e.promo2026 = e.hits2026 >= 8;
+  e.close2025 = !e.promo2025 && e.hits2025 >= 6;
+  e.close2026 = !e.promo2026 && e.hits2026 >= 3;
+});
+
+let activeYear = 2025;
+let filters = { shift:'all', role:'all', status:'all' };
+let search = '';
+
+function setYear(yr, btn) {
+  activeYear = yr;
+  document.querySelectorAll('.ytab').forEach(b => b.className = 'ytab');
+  btn.className = `ytab active-${yr}`;
+  render();
+}
 
 function setFilter(type, val, btn) {
   filters[type] = val;
-  document.querySelectorAll(`[data-filter="${type}"]`).forEach(b => b.classList.remove('active'));
+  document.querySelectorAll(`[data-f="${type}"]`).forEach(b => b.classList.remove('active'));
   btn.classList.add('active');
   render();
 }
 
-document.getElementById('searchInput').addEventListener('input', e => {
-  searchQuery = e.target.value.toLowerCase();
-  render();
-});
+document.getElementById('searchInput').addEventListener('input', e => { search = e.target.value.toLowerCase(); render(); });
 
 function getFiltered() {
   return EMPLOYEES.filter(e => {
     if (filters.shift !== 'all' && e.shift !== filters.shift) return false;
     if (filters.role !== 'all' && e.role !== filters.role) return false;
-    if (filters.status === 'promo' && !e.promotion_candidate) return false;
+    const promo = activeYear === 2025 ? e.promo2025 : e.promo2026;
+    const close = activeYear === 2025 ? e.close2025 : e.close2026;
+    if (filters.status === 'promo' && !promo) return false;
+    if (filters.status === 'close' && !close) return false;
     if (filters.status === 'new' && !e.is_new) return false;
-    if (searchQuery && !e.nome.toLowerCase().includes(searchQuery)) return false;
+    if (search && !e.nome.toLowerCase().includes(search)) return false;
     return true;
   });
 }
 
-function getHitColor(hits) {
-  if (hits >= 8) return 'fill-purple';
-  if (hits >= 5) return 'fill-green';
-  if (hits >= 2) return 'fill-yellow';
-  return 'fill-red';
-}
-
 function renderStats(filtered) {
+  const yr = activeYear;
   const total = filtered.length;
-  const promo = filtered.filter(e => e.promotion_candidate).length;
-  const newEmps = filtered.filter(e => e.is_new).length;
-  const avgHits = total > 0 ? (filtered.reduce((s,e) => s+e.hits_count,0)/total).toFixed(1) : 0;
+  const promo = filtered.filter(e => yr===2025?e.promo2025:e.promo2026).length;
+  const close = filtered.filter(e => yr===2025?e.close2025:e.close2026).length;
+  const newE = filtered.filter(e => e.is_new).length;
+  const totalMths = yr===2025 ? TOTAL_2025 : TOTAL_2026;
+  const avgHits = total > 0 ? (filtered.reduce((s,e) => s+(yr===2025?e.hits2025:e.hits2026),0)/total).toFixed(1) : 0;
+
+  const promoColor = yr===2025?'var(--purple)':'var(--blue)';
   document.getElementById('statsBar').innerHTML = `
-    <div class="stat-card"><div class="stat-label">Colaboradores</div><div class="stat-value blue">${total}</div></div>
-    <div class="stat-card"><div class="stat-label">Candidatos promoção ≥8 meses</div><div class="stat-value purple">${promo}</div></div>
-    <div class="stat-card"><div class="stat-label">Novos na empresa</div><div class="stat-value yellow">${newEmps}</div></div>
-    <div class="stat-card"><div class="stat-label">Média meses batidos</div><div class="stat-value green">${avgHits}</div></div>
+    <div class="stat"><div class="stat-lbl">Colaboradores</div><div class="stat-val" style="color:var(--blue)">${total}</div></div>
+    <div class="stat"><div class="stat-lbl">Promovíveis ${yr} (≥8/${totalMths} meses)</div><div class="stat-val" style="color:${promoColor}">${promo}</div></div>
+    <div class="stat"><div class="stat-lbl">Quase lá (${yr===2025?'6-7':'3+'} meses)</div><div class="stat-val" style="color:var(--orange)">${close}</div></div>
+    <div class="stat"><div class="stat-lbl">Novos colaboradores</div><div class="stat-val" style="color:var(--yellow)">${newE}</div></div>
+    <div class="stat"><div class="stat-lbl">Média meses batidos</div><div class="stat-val" style="color:var(--green)">${avgHits}</div></div>
   `;
 }
 
 function renderPromo(filtered) {
-  const promos = filtered.filter(e => e.promotion_candidate);
-  const sec = document.getElementById('promoSection');
-  if (promos.length === 0) { sec.innerHTML = ''; return; }
-  sec.innerHTML = `
-    <div class="promo-title">Candidatos à Promoção de Cargo (≥8 meses batendo meta)</div>
-    <div class="promo-cards">
-      ${promos.map(e => `
-        <div class="promo-card">
-          <div class="promo-name">${e.nome}</div>
-          <div class="promo-detail">${e.role} · ${e.shift} · ${e.cargo}</div>
-          <div class="promo-months">🏆 ${e.hits_count} meses acima da meta</div>
-          <div class="promo-detail" style="margin-top:6px;font-size:.72rem;">
-            Meses batidos: ${MONTHS.filter(m => e.monthly[m]?.hit).join(', ')}
-          </div>
+  const yr = activeYear;
+  const promos = filtered.filter(e => yr===2025?e.promo2025:e.promo2026);
+  const wrap = document.getElementById('promoWrap');
+  if (!promos.length) { wrap.innerHTML=''; return; }
+  const months = yr===2025?MONTHS_2025:MONTHS_2026;
+  const total = yr===2025?TOTAL_2025:TOTAL_2026;
+  wrap.innerHTML = `
+    <div class="promo-title">⭐ Candidatos à Promoção de Cargo — <span>${yr}</span> · ${promos.length} colaborador(es)</div>
+    ${promos.map(e => {
+      const hits = yr===2025?e.hits2025:e.hits2026;
+      const hitMonths = months.filter(m=>e.monthly[m]?.hit && e.monthly[m]?.num!==null).join(' · ');
+      return `<div class="promo-card">
+        <div>
+          <div class="pname">${e.nome}</div>
+          <div class="pinfo">${e.role} · Turno ${e.shift} · ${e.cargo}</div>
+          <div class="pmonths">Meses batidos: ${hitMonths}</div>
         </div>
-      `).join('')}
-    </div>
+        <div class="ptag">🏆 ${hits} / ${total} meses</div>
+      </div>`;
+    }).join('')}
   `;
 }
 
 function renderCard(e) {
-  const shiftBadge = e.shift === 'Tarde' ? 'badge-tarde' : e.shift === 'Noite' ? 'badge-noite' : 'badge-manha';
-  const roleBadge = e.role === 'Separador' ? 'badge-sep' : 'badge-conf';
-  const maxMonths = 14;
-  const hitPct = Math.round((e.hits_count / maxMonths) * 100);
-  const fillClass = getHitColor(e.hits_count);
-  
-  const monthCells = MONTHS.map(m => {
+  const yr = activeYear;
+  const months = yr===2025?MONTHS_2025:MONTHS_2026;
+  const total = yr===2025?TOTAL_2025:TOTAL_2026;
+  const hits = yr===2025?e.hits2025:e.hits2026;
+  const promo = yr===2025?e.promo2025:e.promo2026;
+  const close = yr===2025?e.close2025:e.close2026;
+
+  const shiftCls = e.shift==='Tarde'?'b-tarde':e.shift==='Noite'?'b-noite':'b-manha';
+  const roleCls = e.role==='Separador'?'b-sep':'b-conf';
+  const colCount = months.length;
+
+  const cells = months.map(m => {
     const d = e.monthly[m];
-    if (!d || d.num === null) {
-      return `<div class="month-cell no-data"><div class="m-label">${m}</div><div class="m-pct">—</div></div>`;
-    }
-    const cls = d.hit ? 'hit' : 'miss';
-    const pct = d.pct !== null ? d.pct + '%' : '?';
-    return `<div class="month-cell ${cls}" title="${m}: ${d.num} pts (${pct})"><div class="m-label">${m}</div><div class="m-pct">${pct}</div></div>`;
+    if (!d || d.num===null) return `<div class="mc nd"><div class="ml">${m.replace('/25','').replace('/26','')}</div><div class="mv">—</div></div>`;
+    const cls = d.hit?'hit':'miss';
+    return `<div class="mc ${cls}" title="${m}: ${d.num} pts (${d.pct}%)"><div class="ml">${m.replace('/25','').replace('/26','')}</div><div class="mv">${d.pct!==null?d.pct+'%':'?'}</div></div>`;
   }).join('');
 
+  const hitsPct = Math.round((hits/total)*100);
+  const targetPct = Math.round((8/total)*100);
+  const fillColor = promo?'#a78bfa':close?'#fb923c':hits>=2?'#60a5fa':'#4b5563';
+  const hitsClass = promo?'promo':close?'close':hits>=3?'ok':'low';
+
+  const noteTxt = promo?'✅ Meta atingida':close?(yr===2025&&hits===7?'⚡ Faltou 1!':'🔥 Quase lá'):'';
+
   const extraBadges = [
-    e.promotion_candidate ? '<span class="badge badge-promo">⭐ Promover</span>' : '',
-    e.is_new ? '<span class="badge badge-new">🆕 Novo</span>' : ''
+    promo?'<span class="badge b-promo">⭐ Promover</span>':'',
+    close&&!promo?'<span class="badge b-close">🔥 Quase</span>':'',
+    e.is_new?'<span class="badge b-new">🆕 Novo</span>':''
   ].filter(Boolean).join('');
 
+  const cardCls = promo?'card promo':close?'card close':e.is_new?'card newbie':'card';
+
   return `
-    <div class="card ${e.promotion_candidate ? 'promo' : ''} ${e.is_new ? 'new-emp' : ''}" onclick="toggleCard(this)">
-      <div class="card-header">
+    <div class="${cardCls}" onclick="toggleCard(this)">
+      <div class="ch">
         <div>
-          <div class="card-name">${e.nome}</div>
-          <div class="card-role">${e.cargo}</div>
+          <div class="cname">${e.nome}</div>
+          <div class="crole">${e.cargo}</div>
         </div>
         <div class="badges">
-          <span class="badge ${roleBadge}">${e.role}</span>
-          <span class="badge ${shiftBadge}">${e.shift}</span>
+          <span class="badge ${roleCls}">${e.role}</span>
+          <span class="badge ${shiftCls}">${e.shift}</span>
           ${extraBadges}
         </div>
       </div>
-      <div class="hits-section">
-        <div class="hits-label">Metas batidas <span>${e.hits_count} / ${maxMonths} meses</span></div>
-        <div class="progress-bar"><div class="progress-fill ${fillClass}" style="width:${hitPct}%"></div></div>
+      <div class="cms">
+        <div class="cms-head">
+          <span>📅 ${yr} — ${total} meses${yr===2026?' (em andamento)':''}</span>
+          <span class="chits ${hitsClass}">${hits}/${total} batidos ${noteTxt?'· '+noteTxt:''}</span>
+        </div>
+        <div class="mcells" style="grid-template-columns:repeat(${colCount},1fr)">${cells}</div>
       </div>
-      <div class="months-grid">
-        <div class="months-label">Histórico mensal</div>
-        <div class="month-cells">${monthCells}</div>
+      <div class="prog">
+        <div class="prog-bar">
+          <div class="prog-fill" style="width:${hitsPct}%;background:${fillColor}"></div>
+          ${total>=8?`<div class="prog-target" style="left:${targetPct}%"></div>`:''}
+        </div>
+        <div class="prog-labels">
+          <span>0</span>
+          ${total>=8?`<span style="color:rgba(167,139,250,.6)">↑ meta (8)</span>`:''}
+          <span>${total} meses</span>
+        </div>
       </div>
-      <div class="card-expanded">
-        <div class="detail-row"><span class="detail-key">Cargo</span><span class="detail-val">${e.cargo}</span></div>
-        <div class="detail-row"><span class="detail-key">Função</span><span class="detail-val">${e.funcao}</span></div>
-        <div class="detail-row"><span class="detail-key">Horário</span><span class="detail-val">${e.horario}</span></div>
-        <div class="detail-row"><span class="detail-key">Turno</span><span class="detail-val">${e.shift}</span></div>
-        <div class="detail-row"><span class="detail-key">Primeiro mês ativo</span><span class="detail-val">${e.first_month || 'Abr/25'}</span></div>
-        <div class="detail-row"><span class="detail-key">Meses batendo meta</span><span class="detail-val">${e.hits_count}</span></div>
-        ${e.promotion_candidate ? '<div class="detail-row"><span class="detail-key" style="color:var(--purple)">🌟 Status</span><span class="detail-val" style="color:var(--purple)">Candidato à promoção de cargo</span></div>' : ''}
-        ${e.is_new ? '<div class="detail-row"><span class="detail-key" style="color:var(--yellow)">🆕 Obs</span><span class="detail-val" style="color:var(--yellow)">Colaborador novo (entrou após Jun/25)</span></div>' : ''}
+      <div class="cexp">
+        <div class="er"><span class="ek">Cargo</span><span class="ev">${e.cargo}</span></div>
+        <div class="er"><span class="ek">Função</span><span class="ev">${e.funcao}</span></div>
+        <div class="er"><span class="ek">Horário</span><span class="ev">${e.horario}</span></div>
+        <div class="er"><span class="ek">Turno</span><span class="ev">${e.shift}</span></div>
+        <div class="er"><span class="ek">Primeiro mês com dados</span><span class="ev">${e.first_month||'Abr/25'}</span></div>
+        <div class="er"><span class="ek">Metas batidas ${yr}</span><span class="ev" style="color:${promo?'var(--purple)':close?'var(--orange)':'var(--text)'}">${hits} / ${total}</span></div>
+        ${promo?`<div class="er"><span class="ek" style="color:var(--purple)">🌟 Status</span><span class="ev" style="color:var(--purple)">Candidato à promoção de cargo</span></div>`:''}
+        ${e.is_new?`<div class="er"><span class="ek" style="color:var(--yellow)">🆕 Obs</span><span class="ev" style="color:var(--yellow)">Novo (entrou após Jun/25)</span></div>`:''}
       </div>
     </div>
   `;
 }
 
 function toggleCard(card) {
-  const exp = card.querySelector('.card-expanded');
-  exp.classList.toggle('open');
+  card.querySelector('.cexp').classList.toggle('open');
 }
 
 function render() {
@@ -330,16 +371,15 @@ function render() {
   renderStats(filtered);
   renderPromo(filtered);
   document.getElementById('countBadge').textContent = filtered.length;
+  document.getElementById('divText').textContent = `Colaboradores — ${activeYear}`;
   const grid = document.getElementById('cardsGrid');
-  if (filtered.length === 0) {
-    grid.innerHTML = '<div class="empty">Nenhum colaborador encontrado com os filtros selecionados.</div>';
-    return;
-  }
-  // Sort: promo first, then by hits desc
+  if (!filtered.length) { grid.innerHTML='<div class="empty">Nenhum colaborador encontrado.</div>'; return; }
+  const yr = activeYear;
   const sorted = [...filtered].sort((a,b) => {
-    if (a.promotion_candidate && !b.promotion_candidate) return -1;
-    if (!a.promotion_candidate && b.promotion_candidate) return 1;
-    return b.hits_count - a.hits_count;
+    const pa = yr===2025?a.promo2025:a.promo2026, pb = yr===2025?b.promo2025:b.promo2026;
+    if (pa&&!pb) return -1; if (!pa&&pb) return 1;
+    const ha = yr===2025?a.hits2025:a.hits2026, hb = yr===2025?b.hits2025:b.hits2026;
+    return hb - ha;
   });
   grid.innerHTML = sorted.map(renderCard).join('');
 }
